@@ -1,0 +1,63 @@
+import { analyticsContent, cogestaoContent, digitalInnovationContent, gestaoPerformanceContent, procurementContent, supplyChainContent, sustentabilidadeContent } from '@/data/solutionsContent';
+
+export const solutionsCatalog = [
+  {
+    title: "Analytics",
+    href: "/solucoes/analytics",
+    description: "Transformamos dados em insights estratégicos para o seu negócio.",
+    content: analyticsContent,
+    topTrends: ["Redução de custos", "Eficiência operacional", "Geração de caixa", "Gerenciamento de risco"],
+    imagem: "/solutions/solution-1.jpg",
+  },
+  {
+    title: "Cogestão",
+    href: "/solucoes/cogestao",
+    description: "Ajudamos na tomada de decisões estratégicas para impulsionar resultados.",
+    content: cogestaoContent,
+    topTrends: ["Terceirização de processos","Gestor interno","Parcerias Estratégicas","Change Management"],
+    imagem: "/solutions/solution-1.jpg",
+  },
+  {
+    title: "Digital & Innovation",
+    href: "/solucoes/digital-innovation",
+    description: "Aceleramos a transformação digital e a inovação na sua empresa.",
+    content: digitalInnovationContent,
+    topTrends: ["BPM (Business Management", "RPA (Robotic Process Automation)", "Cloud Infrastructe & Computing", 
+      "Cyber Security & LGPD (Lei de proteção de dados)"],
+    imagem: "/solutions/solution-1.jpg",
+  },
+  {
+    title: "Gestão de Performance",
+    href: "/solucoes/gestao-de-performance",
+    description: "Medimos e otimizamos a performance para máximo desempenho.",
+    content: gestaoPerformanceContent,
+    topTrends: ["KPI Excellence", "Produtividade operacional", "Eficiência tributária",
+      "Funções de suporte", "Financial Supply Chain"],
+    imagem: "/solutions/solution-1.jpg",
+  },
+  {
+    title: "Supply Chain",
+    href: "/solucoes/supply-chain",
+    description: "Otimizamos a cadeia de suprimentos para eficiência e redução de custos.",
+    content: supplyChainContent,
+    topTrends: ["Redução de custos logístic", "Redução do capital empregado", "Avaliação do nível de serviço"],
+    imagem: "/solutions/solution-1.jpg",
+  },
+  {
+    title: "Procurement",
+    href: "/solucoes/procurement",
+    description: "Simplificamos o processo de compras para gerar valor e economia.",
+    content: procurementContent,
+    topTrends: ["Estratégia e Negociações de Categorias", "Otimização do Processo Req-to-Pay",
+      "Modelagem da Cadeia de Suprimentos", "Gestão de Avaliação e Desempenho de Fornecedor"],
+    imagem: "/solutions/solution-1.jpg",
+  },
+  {
+    title: "Sustentabilidade",
+    href: "/solucoes/sustentabilidade",
+    description: "Integramos práticas sustentáveis para criar valor e vantagem competitiva.",
+    content: sustentabilidadeContent,
+    topTrends: ["Relacionamento e conteúdo", "Responsabilidade social corporativa", "Economia circular"],
+    imagem: "/solutions/solution-1.jpg",
+  },
+];
