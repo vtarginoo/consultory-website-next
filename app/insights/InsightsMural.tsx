@@ -42,7 +42,7 @@ export default function InsightsMural({ insights }: InsightsMuralProps) {
           {/* Quatro cards pequenos - Ocupam 1 coluna cada em telas grandes */}
           {fourth && (
             <div className="col-span-1">
-              <InsightCard insight={fourth}  />
+              <SmallInsightCard insight={fourth}  />
             </div>
           )}
           {fifth && (
