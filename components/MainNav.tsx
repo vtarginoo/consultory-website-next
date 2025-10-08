@@ -15,32 +15,37 @@ import { usePathname } from "next/navigation";
 import SolutionsPanel from "./panels/SolutionsPanel";
 
 export const navItems = [
-    {
-      label: "Home",
-      href: "/",
-      isPanel: false,
-    },
+    // {
+    //   label: "Home",
+    //   href: "/",
+    //   isPanel: false,
+    // },
     {
       label: "Insights",
       href: "/insights",
       isPanel: false,
     },
     {
-      label: "Soluções",
-      href: "/solucoes",
-      isPanel: true,
-      component: <SolutionsPanel />,
-    },
-    {
-      label: "Sobre Nós",
-      href: "/sobre-nos",
+      label: "Quem Somos",
+      href: "/quem-somos",
       isPanel: false,
     },
     {
-      label: "Conheça Nossos Líderes",
-      href: "/conhece-nossos-lideres",
+      label: "Contato",
+      href: "/contato",
       isPanel: false,
     },
+    // {
+    //   label: "Soluções",
+    //   href: "/solucoes",
+    //   isPanel: true,
+    //   component: <SolutionsPanel />,
+    // },
+    // {
+    //   label: "Conheça Nossos Líderes",
+    //   href: "/conhece-nossos-lideres",
+    //   isPanel: false,
+    // },
   ];
 
 
@@ -79,9 +84,9 @@ export default function MainNav() {
                   {item.label}
                 </NavigationMenuLink>
               )}
-              {item.isPanel && (
+              {/* {item.isPanel && (
                 <NavigationMenuContent  className="z-[9999]" >{item.component}</NavigationMenuContent>
-              )}
+              )} */}
             </NavigationMenuItem>
           ))}
         </NavigationMenuList>

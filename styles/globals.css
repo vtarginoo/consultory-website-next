@@ -66,3 +66,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+.font-framer-title {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600; /* usa a versão Bold */
+  font-style: normal;
+  font-size: 64px;
+  line-height: 2.5;
+  letter-spacing: 0em;
+  text-align: start;
+  color: #fff;
+
+  
+}
+
+@keyframes slide {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
