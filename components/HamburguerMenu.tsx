@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation"; // Importe o hook usePathname
 import { navItems } from "./MainNav"; // Importa a constante centralizada
 import React from "react";
 
-export default function HamburgerMenu({className}) {
+export default function HamburgerMenu({isScrolled }: { isScrolled: boolean },{className}) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("main");
   const pathname = usePathname();

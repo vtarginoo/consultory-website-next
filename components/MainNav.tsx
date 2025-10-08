@@ -49,7 +49,7 @@ export const navItems = [
   ];
 
 
-export default function MainNav() {
+export default function MainNav({ isScrolled }: { isScrolled: boolean }) {
   const pathname = usePathname();
 
   const baseClasses = "font-heading text-xl font-bold px-0";

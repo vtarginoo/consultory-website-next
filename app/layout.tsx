@@ -4,6 +4,7 @@ import Footer from "components/Footer";
 
 
 import "styles/globals.css";
+import ClientLayout from "./ClientLayout";
 
 export const metadata: Metadata = {
   title: "Arco Consulting Partners",
@@ -26,9 +27,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       </head>
       <body className="bg-white dark:bg-black min-h-screen">
-        <Header />
+        <ClientLayout>
           {children}
-          <Footer />
+          
+        </ClientLayout>
 
       </body>
     </html>

@@ -40,24 +40,33 @@ export default function HeroVideo() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Conteúdo principal */}
-      <div className="relative z-10 w-full max-w-7xl px-20 flex justify-between items-center">
-        {/* Bloco da esquerda (título e subtítulo) */}
-        <div className="max-w-[600px]">
-          <h1 className="font-framer-title text-4xl md:text-6xl font-bold leading-tight">
-            Transformando estratégia em resultados
-          </h1>
-        </div>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
+        <div className="flex justify-between items-center gap-8">
+          
+          {/* Bloco da esquerda (título) */}
+          <div className="flex-1 max-w-2xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-framer-title leading-tight">
+              Transformando estratégia em resultados
+            </h1>
+          </div>
 
-        {/* Bloco da direita (setores animados) */}
-        <div className="overflow-hidden h-10">
-            <h6 className="text-lg text-white/70 ">para</h6>
-          <ul className="animate-slide text-2xl font-semibold space-y-2">
-            {setores.map((setor, index) => (
-              <li key={index}>{setor}</li>
-            ))}
-          </ul>
+          {/* Bloco da direita (setores animados) */}
+          <div className="flex flex-col items-start">
+            <p className="text-lg md:text-xl text-white/60 mb-2">para</p>
+            <div className="overflow-hidden h-12">
+              <ul className="animate-slide text-3xl md:text-4xl lg:text-5xl font-framer-title">
+                {/* Esse conteúdo animate-slide esta no global.css */}
+                {setores.map((setor, index) => (
+                  <li key={index} className="h-12 flex items-center">
+                    {setor}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
+
     </section>
   );
 }
