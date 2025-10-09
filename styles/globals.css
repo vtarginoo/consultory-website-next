@@ -74,13 +74,25 @@
   font-weight: 600; /* usa a versão Bold */
   font-style: normal;
   font-size: 64px;
-  line-height: 2.5;
-  letter-spacing: 0em;
+  
   text-align: start;
   color: #fff;
 
   
 }
+
+.font-framer-subtitle {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600; 
+  font-style: normal;
+  font-size: 24px;
+  line-height: 2.5;
+  letter-spacing: 0em;
+  text-align: start;
+  color: rgba(255, 255, 255, 0.6); 
+}
+
+
 
 @keyframes slide {
   0% { transform: translateY(0); }
@@ -88,5 +100,5 @@
 }
 
 .animate-slide {
-  animation: slide 20s linear infinite;
+  animation: slide 10s steps(5) infinite; /* 5 itens = 5 passos */
 }

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
 interface HeroVideoProps {
@@ -13,8 +16,7 @@ export default function HeroVideo() {
     "Indústria",
     "Energia",
     "Saneamento",
-    "Oil",
-    "Gás",
+    "Oil and Gas",
     "Infraestrutura",
     "Agro",
     "Siderúrgica",
@@ -22,6 +24,25 @@ export default function HeroVideo() {
     "Bens e Consumo",
     "Esportes",
   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setIsAnimating(true);
+        
+        setTimeout(() => {
+          setCurrentIndex((prev) => (prev + 1) % setores.length);
+          setIsAnimating(false);
+        }, 300); // Duração da animação de saída
+        
+      }, 2000); // Troca a cada 2 segundos
+
+      return () => clearInterval(interval);
+    }, [setores.length]);
+
+
 
    return (
     <section className="hero-video relative w-full h-screen flex flex-col justify-center items-center text-white overflow-hidden">
@@ -41,7 +62,7 @@ export default function HeroVideo() {
 
       {/* Conteúdo principal */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
-        <div className="flex justify-between items-center gap-8">
+        <div className="flex justify-between items-end gap-8">
           
           {/* Bloco da esquerda (título) */}
           <div className="flex-1 max-w-2xl">
@@ -50,23 +71,27 @@ export default function HeroVideo() {
             </h1>
           </div>
 
+
+          
+
           {/* Bloco da direita (setores animados) */}
-          <div className="flex flex-col items-start">
-            <p className="text-lg md:text-xl text-white/60 mb-2">para</p>
-            <div className="overflow-hidden h-12">
-              <ul className="animate-slide text-3xl md:text-4xl lg:text-5xl font-framer-title">
-                {/* Esse conteúdo animate-slide esta no global.css */}
-                {setores.map((setor, index) => (
-                  <li key={index} className="h-12 flex items-center">
-                    {setor}
-                  </li>
-                ))}
-              </ul>
+          <div className="flex flex-col items-start flex-1 max-w-md">
+            <p className="font-framer-subtitle">para</p>
+            <div className="overflow-hidden h-16 flex items-center w-full">
+              <div
+                className={`font-framer-title transition-all duration-300 whitespace-nowrap ${
+                  isAnimating 
+                    ? 'opacity-0 -translate-y-8' 
+                    : 'opacity-100 translate-y-0'
+                }`}
+              >
+                {setores[currentIndex]}
+              </div>
             </div>
           </div>
         </div>
       </div>
-
     </section>
   );
 }
+
