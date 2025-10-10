@@ -92,6 +92,18 @@
   color: rgba(255, 255, 255, 0.6); 
 }
 
+.font-framer-subtitle2 {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600; 
+  font-style: normal;
+  font-size: 18px;
+  line-height: 2.5;
+  letter-spacing: 0em;
+  text-align: start;
+  color: rgba(255, 255, 255, 0.6); 
+}
+
+
 
 
 @keyframes slide {
