@@ -52,7 +52,7 @@ export const navItems = [
 export default function MainNav({ isScrolled }: { isScrolled: boolean }) {
   const pathname = usePathname();
 
-  const baseClasses = "font-heading text-xl font-bold px-0";
+   const baseClasses = isScrolled ? "font-dm-sans-scrolled px-0" : "font-dm-sans px-0";
   const activeClasses = "text-arco-detail";
   const inactiveClasses = "text-arco-text hover:text-arco-detail";
 

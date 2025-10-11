@@ -2,7 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/components/lib/utils";
 
-// Mudamos o nome do componente para MainNavListItem
+
 const MainNavListItem = React.forwardRef<
   React.ElementRef<typeof Link>,
    React.ComponentPropsWithoutRef<typeof Link> & { onItemClick?: () => void }
@@ -18,7 +18,7 @@ const MainNavListItem = React.forwardRef<
         {...props}
         onClick={onItemClick}
       >
-        <div className="text-sm font-medium leading-none">{title}</div>
+        <div className=" text-sm font-medium leading-none">{title}</div>
         <p className="line-clamp-2 text-sm leading-snug text-gray-500">
           {children}
         </p>
@@ -28,5 +28,5 @@ const MainNavListItem = React.forwardRef<
 });
 MainNavListItem.displayName = "MainNavListItem";
 
-// Exportamos o novo nome
+
 export { MainNavListItem };

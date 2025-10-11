@@ -16,6 +16,7 @@ module.exports = {
 			nav: ["Barlow", "sans-serif"], 
 			inter: ["Inter", "sans-serif"],
 			instruments: ['"Instrument Sans"', '"Instrument Sans Placeholder"', 'sans-serif'],
+			dmsans: ['"DM Sans"', '"DM Sans Placeholder"', 'sans-serif'],
   		},
   		colors: {
   			'arco-blue': {

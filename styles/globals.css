@@ -70,23 +70,33 @@
 
 
 .font-framer-title {
-  font-family: "Instrument Sans", sans-serif;
-  font-weight: 600; /* usa a versão Bold */
+  font-family: "Instrument Sans", "Instrument Sans Placeholder", sans-serif;
+  font-weight: 600; 
   font-style: normal;
   font-size: 64px;
-  
+  line-height: 1.1em;
+  letter-spacing: 0em;
   text-align: start;
   color: #fff;
+}
 
-  
+.font-framer-animation {
+  font-family: "Instrument Sans", "Instrument Sans Placeholder", sans-serif;
+  font-weight: 600; 
+  font-style: normal;
+  font-size: 54px;
+  line-height: 1.1em;
+  letter-spacing: 0em;
+  text-align: start;
+  color: #fff;
 }
 
 .font-framer-subtitle {
-  font-family: "Instrument Sans", sans-serif;
-  font-weight: 600; 
+  font-family: "Instrument Sans", "Instrument Sans Placeholder", sans-serif;
+  font-weight: 600;
   font-style: normal;
   font-size: 24px;
-  line-height: 2.5;
+  line-height: 1.2em; 
   letter-spacing: 0em;
   text-align: start;
   color: rgba(255, 255, 255, 0.6); 
@@ -103,8 +113,36 @@
   color: rgba(255, 255, 255, 0.6); 
 }
 
+.font-dm-sans {
+  font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
+  font-weight: 600; /* Aumentei de 500 para 600 */
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.1em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+}
+
+.font-dm-sans-scrolled {
+  font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
+  font-weight: 600; /* Aumentei de 500 para 600 */
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.1em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(34, 34, 34);
+}
 
 
+
+.dark .font-dm-sans-scrolled {
+  color: rgba(255, 255, 255, 0.9); /* Cor quando scrolled no dark mode */
+}
 
 @keyframes slide {
   0% { transform: translateY(0); }
