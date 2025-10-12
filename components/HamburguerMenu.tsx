@@ -23,10 +23,14 @@ export default function HamburgerMenu({isScrolled }: { isScrolled: boolean },{cl
 
   const currentPanel = navItems.find((item) => item.href === `/${activeMenu}`);
 
-  return (
+   return (
     <div className={className}>
       {/* Botão de abrir o menu */}
-      <button onClick={toggleMenu} className="text-arco-blue text-4xl focus:outline-none">
+      <button 
+        onClick={toggleMenu} 
+        className="text-arco-blue text-4xl focus:outline-none"
+        aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+      >
         {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
       </button>
 
@@ -38,14 +42,6 @@ export default function HamburgerMenu({isScrolled }: { isScrolled: boolean },{cl
           {/* Cabeçalho do menu */}
           <header className="bg-white dark:bg-black shadow-sm dark:border-b dark:border-gray-800">
             <div className="container px-4 py-4 flex items-center justify-between">
-              {activeMenu !== "main" && (
-                <button
-                  onClick={() => setActiveMenu("main")}
-                  className="text-2xl text-arco-blue"
-                >
-                  <span className="mr-2">←</span>Voltar
-                </button>
-              )}
               <Image
                 src="/logo-arco-header-200x85.png"
                 alt="Logo da Arco Consulting Partners"
@@ -55,7 +51,8 @@ export default function HamburgerMenu({isScrolled }: { isScrolled: boolean },{cl
               />
               <button
                 onClick={toggleMenu}
-                className="text-2xl text-arco-blue"
+                className="text-2xl text-arco-blue hover:text-arco-detail transition-colors"
+                aria-label="Fechar menu"
               >
                 <AiOutlineClose />
               </button>
@@ -64,39 +61,21 @@ export default function HamburgerMenu({isScrolled }: { isScrolled: boolean },{cl
 
           {/* Conteúdo das opções de navegação */}
           <div className="p-4">
-            {activeMenu === "main" ? (
-              <ul className="flex flex-col gap-6 text-xl">
-                {navItems.map((item) => (
-                  <li key={item.label}>
-                    {item.isPanel ? (
-                      <button
-                        onClick={() => setActiveMenu(item.href.replace("/", ""))}
-                        className={`flex items-center  w-full font-heading font-bold ${
-                          pathname.startsWith(item.href) ? 'text-arco-detail' : 'text-arco-text'
-                        }`}
-                      >
-                        <span>{item.label}</span>
-                        <span className="text-3xl ml-2 -translate-y-[6px]">→</span>
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={`font-heading font-bold ${
-                          pathname === item.href ? 'text-arco-detail' : 'text-arco-text'
-                        }`}
-                        onClick={toggleMenu}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              currentPanel
-              ? React.cloneElement(currentPanel.component, { onItemClick: toggleMenu }) 
-              : null
-            )}
+            <ul className="flex flex-col gap-6 text-xl">
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className={`block font-heading font-bold hover:text-arco-detail transition-colors ${
+                      pathname === item.href ? 'text-arco-detail' : 'text-arco-text'
+                    }`}
+                    onClick={toggleMenu}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}

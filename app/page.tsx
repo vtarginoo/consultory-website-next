@@ -37,7 +37,7 @@ export default function Page() {
     {
       number: 4,
       title: 'Logo CIEC', // Usado como alt text
-      image: '/logo-ciec.avif',
+      image: '/logo/logo-ciec.avif',
       onlyImage: true, // Mostra apenas a imagem, sem texto
       link: 'https://ciecacademy.com.br/'
     }
@@ -154,7 +154,7 @@ const textAliancaGt = `
         <AllianceSection
           title="NOSSA **ALIANÇA** COM\n A **GRANT THORNTON**"
           description={textAliancaGt}
-          imageSrc="/big-logo-arco.avif"
+          imageSrc="/logo/big-logo-arco.avif"
         />
 
       <AckSection

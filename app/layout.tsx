@@ -18,22 +18,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/tab-icon.png" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Sans&family=DM+Sans:wght@400;500;600;700&display=swap"
-        />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@100..900&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
+          rel="stylesheet"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+
       </head>
       <body className="bg-white dark:bg-black min-h-screen">
         <ClientLayout>
           {children}
-          
+
         </ClientLayout>
 
       </body>
