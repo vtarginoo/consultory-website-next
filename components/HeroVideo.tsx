@@ -117,7 +117,7 @@ export default function HeroVideo() {
               
               <LogoCarousel></LogoCarousel>
 
-              {/* Widget de Contato - PERSONALIZE DEPOIS */}
+              {/* Widget de Contato*/}
               
               <ContactWidget></ContactWidget>            
 

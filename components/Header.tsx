@@ -38,7 +38,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
         {/* Logo */}
         <div className="flex items-center">
         <Image
-          src="/logo-arco.avif"
+          src="/logo/logo-arco.avif"
           alt="Logo da Arco Consulting Partners"
           width={200}
           height={85}

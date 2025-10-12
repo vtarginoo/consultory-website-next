@@ -1,115 +1,222 @@
-import Link from "next/link";
-import Image from "next/image";
-import { AiOutlineLinkedin, AiOutlineMail } from "react-icons/ai";
+
+
+
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { MapPin, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-arco-blue text-white py-12 md:py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-[#1B1D1F] text-white py-16 px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Main Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          {/* About Section */}
+          <div className="space-y-6">
+            <div className="w-[200px] aspect-[1.10648/1] relative -ml-4">
+              <Image
+                src="/logo/logo-footer.avif"
+                alt="ARCO Logo"
+                fill
+                className="object-cover"
+              />
+            </div>
 
-        {/* --- Conteúdo Principal em 2 Colunas (Desktop) --- */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start md:text-left gap-12 md:gap-8 mb-12">
-          
-          {/* Coluna 1: Título, Botão de Contato e Endereço */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-2">
-              Como podemos te ajudar?
-            </h2>
-            <p className="text-base md:text-lg mb-8">
-              Entre em contato conosco e vamos conversar.
-            </p>
-            <Link
-              href="/contato"
-              className="inline-block py-3 px-8 text-white font-bold text-sm uppercase border border-white hover:bg-white hover:text-arco-blue transition-colors mb-8"
+            {/* Decorative line SVG */}
+            <div className="w-14 h-[2px] bg-[#CE9C5D]"></div>
+
+            {/* Rio de Janeiro Location */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-[#CE9C5D]" strokeWidth={2} />
+                <p className="text-[15px]">RIO DE JANEIRO</p>
+              </div>
+              <button className="bg-[#EEEEEE] text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors">
+                ver mais
+              </button>
+            </div>
+
+            {/* São Paulo Location */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-[#CE9C5D]" strokeWidth={2} />
+                <p className="text-[15px]">SÃO PAULO</p>
+              </div>
+              <button className="bg-[#EEEEEE] text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors">
+                ver mais
+              </button>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-center gap-2">
+              <Mail className="w-5 h-5 text-[#CE9C5D]" strokeWidth={2} />
+              <a href="mailto:arco@arcocp.com" className="text-[15px] hover:text-[#CE9C5D] transition-colors">
+                arco@arcocp.com
+              </a>
+            </div>
+          </div>
+
+          {/* Main Solutions */}
+          <div className="space-y-4">
+            <div className="mb-6">
+              <h3 className="text-[#CE9C5D] font-bold text-sm tracking-[0.02em] uppercase mb-2">
+                Principais Soluções
+              </h3>
+              {/* Decorative line SVG */}
+              <div className="w-8 h-[2px] bg-[#CE9C5D]"></div>
+            </div>
+
+            <nav className="flex flex-col gap-4">
+              <Link
+                href="/solucoes"
+                className="group inline-block w-fit"
+              >
+                <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
+                  Soluções
+                </p>
+                <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+              </Link>
+
+              <Link
+                href="/cases"
+                className="group inline-block w-fit"
+              >
+                <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
+                  Cases
+                </p>
+                <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+              </Link>
+
+              <Link
+                href="/sobre"
+                className="group inline-block w-fit"
+              >
+                <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
+                  Sobre Nós
+                </p>
+                <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+              </Link>
+
+              <Link
+                href="/downloads"
+                className="group inline-block w-fit"
+              >
+                <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
+                  Downloads
+                </p>
+                <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+              </Link>
+            </nav>
+          </div>
+
+          {/* About */}
+          <div className="space-y-4">
+            <div className="mb-6">
+              <h3 className="text-[#CE9C5D] font-bold text-sm tracking-[0.02em] uppercase mb-2">
+                Sobre
+              </h3>
+              {/* Decorative line SVG */}
+              <div className="w-8 h-[2px] bg-[#CE9C5D]"></div>
+            </div>
+
+            <nav className="flex flex-col gap-4">
+              <Link
+                href="/lgpd"
+                className="group inline-block w-fit"
+              >
+                <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
+                  LGPD
+                </p>
+                <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+              </Link>
+
+              <Link
+                href="/privacidade"
+                className="group inline-block w-fit"
+              >
+                <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
+                  Política de Privacidade
+                </p>
+                <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+              </Link>
+
+              <Link
+                href="/governanca"
+                className="group inline-block w-fit"
+              >
+                <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
+                  Governança
+                </p>
+                <div className="h-[1px] bg-[-#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+              </Link>
+
+              <Link
+                href="/etica"
+                className="group inline-block w-fit"
+              >
+                <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
+                  Ética
+                </p>
+                <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+              </Link>
+
+              <Link
+                href="/contato"
+                className="group inline-block w-fit"
+              >
+                <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
+                  Contato
+                </p>
+                <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+              </Link>
+            </nav>
+          </div>
+        </div>
+
+        {/* Copyright & Social */}
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[13px] font-medium tracking-[0.04em] uppercase leading-tight text-center md:text-left">
+            Copyright © 2025 // ARCO - Consulting Partners // All rights reserved.
+          </p>
+
+          <div className="flex gap-4">
+            <Link 
+              href="https://linkedin.com" 
+              target="_blank" 
+              className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
             >
-              FALE CONOSCO
+              <Image src="/contact/linkedin.png" alt="LinkedIn" width={20} height={20} className="rounded-full" />
             </Link>
-            
-            {/* Informações de Contato e Sociais (agora na 1ª coluna) */}
-            <div className="flex flex-col items-center md:items-start text-sm">
-              <div className="flex gap-4 mb-2">
-                <Link
-                  href="https://linkedin.com"
-                  aria-label="LinkedIn"
-                  target="_blank"
-                  className="hover:text-arco-detail transition-colors"
-                >
-                  <AiOutlineLinkedin className="text-2xl" />
-                </Link>
-                <Link
-                  href="mailto:contato@arco.com.br"
-                  aria-label="Email"
-                  className="hover:text-arco-detail transition-colors"
-                >
-                  <AiOutlineMail className="text-2xl" />
-                </Link>
-              </div>
-              <div className="text-center md:text-left">
-                <p className="font-bold mb-1">Rio de Janeiro</p>
-                <p>Av. Mal. Câmara, 160, 17º andar - Centro</p>
-              </div>
-            </div>
+            <Link 
+              href="https://instagram.com" 
+              target="_blank" 
+              className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
+            >
+              <Image src="/contact/instagram.png" alt="Instagram" width={20} height={20} className="rounded-full" />
+            </Link>
+            <Link 
+              href="https://whatsapp.com" 
+              target="_blank" 
+              className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
+            >
+              <Image src="/contact/whatsapp.png" alt="WhatsApp" width={20} height={20} className="rounded-full" />
+            </Link>
+            <Link 
+              href="https://youtube.com" 
+              target="_blank" 
+              className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
+            >
+              <Image src="/contact/youtube.png" alt="YouTube" width={20} height={20} className="rounded-full" />
+            </Link>
+            <Link 
+              href="https://facebook.com" 
+              target="_blank" 
+              className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
+            >
+              <Image src="/contact/facebook.png" alt="Facebook" width={20} height={20} className="rounded-full" />
+            </Link>
           </div>
-          
-          {/* Coluna 2: Vídeo (ajustado para não achatar) */}
-          <div className="w-full md:w-1/2 flex justify-center items-start">
-            
-            <div className="w-full max-w-lg relative" style={{ paddingTop: '56.25%' }}> 
-              <iframe
-                src="https://www.youtube.com/embed/Nnr7BFMn7MQ?si=K6c2fegTHzwQg-Nt"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-
-        {/* --- Linha Divisória --- */}
-        <div className="w-full border-t border-white/50 mx-auto mb-6"></div>
-
-        {/* --- Conteúdo Inferior: Selo e Logo --- */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <p className="mb-2">Uma empresa do Grupo Effectus</p>
-            <div className="flex justify-center gap-4 text-sm">
-              <Link href="#" className="hover:underline">Arco</Link>
-              <span>|</span>
-              <Link href="#" className="hover:underline">Effectus</Link>
-              <span>|</span>
-              <Link href="#" className="hover:underline">Health You</Link>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-4"> 
-            <Image
-              src="/logo-arco-header-200x85.png"
-              alt="Logo da Arco Consulting Partners"
-              width={150}
-              height={64}
-            />
-            <Image
-              src="/effectus-footer.png"
-              alt="Logo da Effectus"
-              width={150}
-              height={64}
-            />
-            <Image
-              src="/HealthU.png"
-              alt="Logo da Health You"
-              width={150}
-              height={64}
-            />
-          </div>
-
-        </div>
-        
-        {/* --- Direitos Autorais --- */}
-        <div className="text-center text-xs mt-8 pt-4 border-t border-white/50">
-          &copy; {new Date().getFullYear()} Arco Consulting Partners. Todos os direitos reservados.
         </div>
       </div>
     </footer>
