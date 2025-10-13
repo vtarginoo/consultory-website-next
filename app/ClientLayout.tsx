@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { DynamicBreadcrumb } from 'components/DynamicBreadcrumb';
+import NavigationSpinner from 'components/NavigationSpinner';
+
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -26,12 +28,15 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   return (
     <>
+    
+      <NavigationSpinner />
+      
       <Header isHomePage={pathname === "/"} />
 
       {/* Padding para compensar o header fixo */}
       <div className={pathname !== "/" ? "pt-16 md:pt-20 lg:pt-24" : ""}>
         {showBreadcrumb && (
-           <div className="w-full max-w-7xl  px-24 pt-12 pb-4" >
+          <div className="w-full max-w-7xl px-24 pt-12 pb-4">
             <DynamicBreadcrumb
               items={[
                 { label: "Home", href: "/" },
@@ -46,5 +51,5 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
       <Footer />
     </>
-  )
+  );
 }

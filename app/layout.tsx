@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-import Header from "components/Header";
-import Footer from "components/Footer";
-
 
 import "styles/globals.css";
 import ClientLayout from "./ClientLayout";
@@ -15,19 +12,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/tab-icon.png" type="image/svg+xml" />
+        <link rel="icon" href="/tab-icon.avif" type="image/svg+xml" />
+        {/* Preconnect para fontes */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@100..900&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
+        
+        {/* Fontes com display=swap para evitar FOIT */}
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@100..900&family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+          rel="stylesheet" 
         />
+        
+        {/* Preload do vídeo - CRÍTICO */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          href="/videos/video-home.mp4"
+          as="video"
+          type="video/mp4"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-
 
       </head>
       <body className="bg-white dark:bg-black min-h-screen">

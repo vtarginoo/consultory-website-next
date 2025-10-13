@@ -8,6 +8,7 @@ import { ImpactCase } from "components/ImpactCase";
 import { AllianceSection } from "components/AllianceSection";
 import { AckSection } from "components/AckSection";
 import { ClientsCTASection } from "components/ClientsCTASection";
+import HeroVideoSkeleton from "components/skeletons/HeroVideoSkeleton";
 
 export default function Page() {
 
@@ -122,8 +123,10 @@ Somos a **Arco Consulting Partners**, um grupo de executivos reconhecidos no mer
 
         {/* <HeroCarousel/> */}
 
-        <HeroVideo />
+        {/* <HeroVideo /> */}
 
+        <HeroVideoSkeleton/> 
+        
         <NumberedSection items={numberedItems} className="bg-gray-50" />
 
 

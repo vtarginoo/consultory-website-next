@@ -73,7 +73,7 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
                                     style={{
                                         width: '4px',
                                         height: '24px',
-                                        backgroundColor: '#E8481C',
+                                        backgroundColor: '#ce9c5d',
                                         boxShadow: 'rgba(27, 57, 66, 0.22) 1px 1px 1px 0px',
                                     }}
                                 />

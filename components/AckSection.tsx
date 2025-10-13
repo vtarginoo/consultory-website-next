@@ -13,10 +13,10 @@ export const AckSection: React.FC<AckSectionProps> = ({
   title,
   description,
   images = [
-    '/acknowledgment/ack1.avif',
-    '/acknowledgment/ack2.avif',
-    '/acknowledgment/ack3.avif',
-    '/acknowledgment/ack4.avif'
+    '/acknowledgment/v1-ack1.avif',
+    '/acknowledgment/v1-ack2.avif',
+    '/acknowledgment/v1-ack3.avif',
+    '/acknowledgment/v1-ack4.avif'
   ],
   className = ''
 }) => {

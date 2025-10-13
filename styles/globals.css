@@ -131,6 +131,16 @@
   color: rgb(34, 34, 34);
 }
 
+@layer base {
+  /* Garante que as fontes estejam carregadas */
+  .font-framer-title,
+  .font-framer-subtitle,
+  .font-framer-animation,
+  .font-framer-subtitle2 {
+    font-display: block; /* Evita flash de texto sem estilo */
+  }
+}
+
 
 
 .dark .font-dm-sans-scrolled {
