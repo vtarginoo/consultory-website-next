@@ -6,14 +6,15 @@ import React from 'react';
 export default function LogoCarousel() {
  
   const logos = [
-    { name: "IRV", src: "https://framerusercontent.com/images/TH3stoh8NSzng8zzuMO0GYaZZgY.png" },
-    { name: "Suzano", src: "https://framerusercontent.com/images/F6rin5be6QHW2S4Ojunxf9H9YI.png" },
-    { name: "Lógum", src: "https://framerusercontent.com/images/WfnwJP2B0d341B6zgGnqajO48.png" },
-    { name: "ArcelorMittal", src: "https://framerusercontent.com/images/dMf1303iV1oRDFqz0T9Zp3qTO9M.png" },
-    { name: "Iguá", src: "https://framerusercontent.com/images/OoGDPAreYexEOMzYAwxVVzs8Y.png" },
-    { name: "Veolia", src: "https://framerusercontent.com/images/xW5LLs1ScpD7DbcmsUHceLLMyw.png" },
-    { name: "Ci Group", src: "https://framerusercontent.com/images/wC3wWQFs8eVNb2DcNIObx2wL30.png" },
-    { name: "Rumo", src: "https://framerusercontent.com/images/bHsOsDlZ4ABUrQk0ytXH9VR6uLg.png" },
+    { name: "Lógum", src: "clients/b-logum.avif" },
+    { name: "Suzano", src: "clients/b-suzano.avif" },
+    { name: "Manserv", src: "clients/b-manserv.avif"},
+    { name: "ArcelorMittal", src: "clients/b-arcelor.avif"},
+    { name: "Raizen", src: "clients/b-raizen.avif"},
+    { name: "Veolia", src: "clients/b-veolia.avif"},
+    { name: "Sabesp", src: "clients/b-sabesp.avif"},
+    { name: "vibra", src: "clients/b-vibra.avif"},
+    { name: "SBM", src: "clients/b-sbm.avif"},
   ];
   
   const repeatedLogos = [...logos, ...logos, ...logos];
