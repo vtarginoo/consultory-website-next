@@ -5,10 +5,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Mail } from 'lucide-react';
+import MoreButton from './MoreButton';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1B1D1F] text-white py-16 px-6">
+    <footer className="bg-[#1B1D1F] text-white py-16 px-6"
+      style={{
+        backgroundColor: 'rgb(0,0,0)'
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
@@ -26,26 +31,25 @@ export default function Footer() {
             {/* Decorative line SVG */}
             <div className="w-14 h-[2px] bg-[#CE9C5D]"></div>
 
-            {/* Rio de Janeiro Location */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#CE9C5D]" strokeWidth={2} />
-                <p className="text-[15px]">RIO DE JANEIRO</p>
+            {/* Localizações */}
+            <div className="space-y-4">
+              {/* Rio de Janeiro Location */}
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-[#CE9C5D]" strokeWidth={2} />
+                  <p className="text-[15px]">RIO DE JANEIRO</p>
+                </div>
+                <MoreButton text="ver mais" link="/localizacao/rio-de-janeiro" />
               </div>
-              <button className="bg-[#EEEEEE] text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors">
-                ver mais
-              </button>
-            </div>
 
-            {/* São Paulo Location */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#CE9C5D]" strokeWidth={2} />
-                <p className="text-[15px]">SÃO PAULO</p>
+              {/* São Paulo Location */}
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-[#CE9C5D]" strokeWidth={2} />
+                  <p className="text-[15px]">SÃO PAULO</p>
+                </div>
+                <MoreButton text="ver mais" link="/localizacao/sao-paulo" />
               </div>
-              <button className="bg-[#EEEEEE] text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors">
-                ver mais
-              </button>
             </div>
 
             {/* Email */}
@@ -181,37 +185,37 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4">
-            <Link 
-              href="https://linkedin.com" 
-              target="_blank" 
+            <Link
+              href="https://linkedin.com"
+              target="_blank"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
             >
               <Image src="/contact/linkedin.png" alt="LinkedIn" width={20} height={20} className="rounded-full" />
             </Link>
-            <Link 
-              href="https://instagram.com" 
-              target="_blank" 
+            <Link
+              href="https://instagram.com"
+              target="_blank"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
             >
               <Image src="/contact/instagram.png" alt="Instagram" width={20} height={20} className="rounded-full" />
             </Link>
-            <Link 
-              href="https://whatsapp.com" 
-              target="_blank" 
+            <Link
+              href="https://whatsapp.com"
+              target="_blank"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
             >
               <Image src="/contact/whatsapp.png" alt="WhatsApp" width={20} height={20} className="rounded-full" />
             </Link>
-            <Link 
-              href="https://youtube.com" 
-              target="_blank" 
+            <Link
+              href="https://youtube.com"
+              target="_blank"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
             >
               <Image src="/contact/youtube.png" alt="YouTube" width={20} height={20} className="rounded-full" />
             </Link>
-            <Link 
-              href="https://facebook.com" 
-              target="_blank" 
+            <Link
+              href="https://facebook.com"
+              target="_blank"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
             >
               <Image src="/contact/facebook.png" alt="Facebook" width={20} height={20} className="rounded-full" />

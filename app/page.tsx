@@ -1,9 +1,4 @@
 
-import HeroCarousel from "components/HeroCarousel";
-import SolutionsHighlight from "components/SolutionsHighlight";
-import InsightsMural from "./insights/InsightsMural";
-import { insightsData } from "@/data/insightData";
-import IndicatorSection from "components/IndicatorSection";
 import HeroVideo from "components/HeroVideo";
 import { NumberedSection } from "components/NumberedSection";
 import { DNASection } from "components/DNASection";
@@ -31,7 +26,7 @@ export default function Page() {
     },
     {
       number: 3,
-      title: 'Arco & Grant Thorton',
+      title: 'Aliança Arco & Grant Thorton',
       link: '/arco-gt'
     },
     {
@@ -47,7 +42,7 @@ export default function Page() {
 
   const nossoDna = `
   
-  O nome **Arco** ressalta nossos valores de flexibilidade e precisão.
+O nome **Arco** ressalta nossos valores de flexibilidade e precisão.
 
 Porque cada cliente é único.
 
@@ -66,24 +61,24 @@ Somos a **Arco Consulting Partners**, um grupo de executivos reconhecidos no mer
   const solutionsData = [
     {
       id: 1,
-      title: 'Spend Assessment & Strategic Sourcing',
-      description: 'Apoiamos empresas a identificar e capturar reduções de custos sustentáveis ao estruturar estratégias de categorias, conduzir negociações complexas, utilizando alavancas de valor e gerar resultados de curto prazo.',
-      imageNumber: 1,
-      link: '/solucoes/spend-assessment',
-    },
-    {
-      id: 2,
       title: 'Value Chain Optimization',
       description: 'Otimizamos toda a cadeia de valor da sua empresa, identificando oportunidades de melhoria e implementando soluções eficientes.',
-      imageNumber: 2,
+      imageNumber: 1,
       link: '/solucoes/value-chain',
     },
     {
-      id: 3,
+      id: 2,
       title: 'Procurement Transformation',
       description: 'Transformamos a área de compras com processos modernos, tecnologia e melhores práticas do mercado.',
-      imageNumber: 3,
+      imageNumber: 2,
       link: '/solucoes/procurement',
+    },
+    {
+      id: 3,
+      title: 'Spend Assessment & Strategic Sourcing',
+      description: 'Apoiamos empresas a identificar e capturar reduções de custos sustentáveis ao estruturar estratégias de categorias, conduzir negociações complexas, utilizando alavancas de valor e gerar resultados de curto prazo.',
+      imageNumber: 3,
+      link: '/solucoes/spend-assessment',
     },
     {
       id: 4,
@@ -105,20 +100,13 @@ Somos a **Arco Consulting Partners**, um grupo de executivos reconhecidos no mer
     category: 'Oil & Gás',
     title: 'Aplicação do Diagnóstico Estratégico de Procurement e Strategic Sourcing em um líder global de Oil & Gas',
     description: 'Nas operações de FPSO, a área de procurement enfrentava baixa autonomia e pouco reconhecimento estratégico; o diagnóstico identificou mais de USD 100 milhões em oportunidades potenciais e gerou, já nos quick wins, mais de USD 20 milhões em reduções de custo incorporadas ao planejamento estratégico, tendo como motor a aplicação de alavancas de valor que aproximaram procurement das operações, ampliando sua visibilidade e posicionamento estratégico',
-    items: [
-      'Extension of supplier base',
-      'Specification improvement',
-      'Volume Commitments',
-      'Long-Term Agreements',
-      'Business Model',
-      'Cost Breakdown',
-      'Volume Bundling',
-    ],
-    imageUrl: '/cases/oil-gas.webp',
+    highlightText: "A aplicação combinada das alavancas de procurement gerou reduções significativas, com as maiores oportunidades sendo capturadas quando múltiplas alavancas foram utilizadas em conjunto.",
+    imageUrl: "/cases/oil-gas.webp",
+    imageUrl2: "/cases/oil-gas2.avif",
     buttonLink: '/cases/oil-gas',
   };
 
-const textAliancaGt = `
+  const textAliancaGt = `
           A aliança entre a **Grant Thornton Brasil** e a **ARCO**\n
           **Consulting Partners** potencializa o compromisso de cada\n
           uma com a excelência na entrega de resultados.
@@ -149,7 +137,7 @@ const textAliancaGt = `
         <SolutionsMenu solutions={solutionsData}></SolutionsMenu>
 
 
-        <ImpactCase {...caseData}  />
+        <ImpactCase {...caseData} />
 
         <AllianceSection
           title="NOSSA **ALIANÇA** COM\n A **GRANT THORNTON**"
@@ -157,16 +145,16 @@ const textAliancaGt = `
           imageSrc="/logo/big-logo-arco.avif"
         />
 
-      <AckSection
-        title="FAZENDO A\n**DIFERENÇA**"
-        description="**Reconhecimento**, **parcerias** e **alianças estratégicas** que refletem em nossos resultados"
-      />
+        <AckSection
+          title="FAZENDO A\n**DIFERENÇA**"
+          description="**Reconhecimento**, **parcerias** e **alianças estratégicas** que refletem em nossos resultados"
+        />
 
-    <ClientsCTASection 
-      title="ORGANIZAÇÕES QUE JÁ **TRANSFORMARAM** SUA GESTÃO COM A **ARCO**"
-      description={"Nosso trabalho já gera resultados reais em empresas líderes de mercado."}>
-    </ClientsCTASection>
-     
+        <ClientsCTASection
+          title="ORGANIZAÇÕES QUE JÁ **TRANSFORMARAM** SUA GESTÃO COM A **ARCO**"
+          description={"Nosso trabalho já gera resultados reais em empresas líderes de mercado."}>
+        </ClientsCTASection>
+
 
 
       </main>

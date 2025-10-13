@@ -18,10 +18,10 @@ export default function HeroVideo() {
     "Indústria",
     "Energia",
     "Saneamento",
-    "Oil and Gas",
+    "Oil & Gas",
     "Infraestrutura",
     "Agro",
-    "Siderúrgica",
+    "Siderurgia",
     "Serviços",
     "Bens e Consumo",
     "Esportes",
@@ -70,7 +70,10 @@ export default function HeroVideo() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end">
                 {/* Coluna esquerda: Título principal */}
                 <div className="text-white">
-                  <h1 className="font-framer-title leading-tight">
+                  <h1 className="font-framer-title leading-tight"
+                  style={{
+                     WebkitTextStroke: '0,5px currentColor',
+                  }}>
                     Transformando estratégia em resultados
                   </h1>
                 </div>
@@ -85,8 +88,11 @@ export default function HeroVideo() {
                       className={`md:text-5xl  font-framer-animation transition-all duration-300 whitespace-nowrap ${isAnimating
                           ? "opacity-0 -translate-y-8"
                           : "opacity-100 translate-y-0"
-                        }`}
-                    >
+                        }`} 
+                        style={{
+                     WebkitTextStroke: '0,5px currentColor',
+                  }}>
+                    
                       {setores[currentIndex]}
                     </div>
                   </div>

@@ -1,13 +1,15 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import MoreButton from './MoreButton';
+import { formatBold } from './lib/textFormatting';
 
 interface ImpactCaseProps {
     category: string;
     title: string;
     description: string;
-    items: string[];
+    highlightText?: string;
     imageUrl: string;
+    imageUrl2: string;
     imageAlt?: string;
     buttonText?: string;
     buttonLink?: string;
@@ -18,8 +20,9 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
     category,
     title,
     description,
-    items,
+    highlightText,
     imageUrl,
+    imageUrl2,
     imageAlt = 'Case study image',
     buttonText = 'VEJA MAIS',
     buttonLink = '#',
@@ -27,7 +30,7 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
 }) => {
     return (
         <section className={`py-16 ${className}`}
-        style={{ backgroundColor: '#1b1d1f0d',}}>
+            style={{ backgroundColor: '#1b1d1f0d', }}>
             <div className="container mx-auto px-4">
                 {/* Título da Seção */}
                 <div className="text-center mb-6">
@@ -61,7 +64,7 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
 
                 {/* Conteúdo Principal */}
                 <div className="flex flex-col lg:flex-row gap-8 items-start">
-                    {/* Texto e Lista */}
+                    {/* Texto e Imagem 2 */}
                     <div className="lg:w-1/2">
                         <div className="space-y-6">
                             {/* Badge de Categoria */}
@@ -70,7 +73,7 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
                                     style={{
                                         width: '4px',
                                         height: '24px',
-                                        backgroundColor: '#ce9c5d',
+                                        backgroundColor: '#E8481C',
                                         boxShadow: 'rgba(27, 57, 66, 0.22) 1px 1px 1px 0px',
                                     }}
                                 />
@@ -110,54 +113,49 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
                                     color: 'rgb(92, 92, 92)',
                                 }}
                             >
-                                {description}
+                                {formatBold(description)}
                             </p>
 
-                            {/* Lista de Items */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
-                                {items.map((item, index) => (
-                                    <div key={index} className="flex items-start gap-3">
-                                        <div
-                                            className="flex-shrink-0 mt-0.5"
-                                            style={{
-                                                width: '20px',
-                                                height: '20px',
-                                            }}
-                                        >
-                                            <svg
-                                                viewBox="0 0 256 256"
-                                                style={{
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    fill: 'rgba(36, 36, 36, 0.5)',
-                                                }}
-                                            >
-                                                <path d="M216,48V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z" opacity="0.2" />
-                                                <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM224,48V208a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM208,208V48H48V208H208Z" />
-                                            </svg>
-                                        </div>
-                                        <p
-                                            style={{
-                                                fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
-                                                fontSize: '14px',
-                                                lineHeight: '1.4em',
-                                                color: 'rgb(92, 92, 92)',
-                                            }}
-                                        >
-                                            {item}
-                                        </p>
-                                    </div>
-                                ))}
+                            {/* Texto destacado (opcional) */}
+                            {highlightText && (
+                                <p
+                                    style={{
+                                        fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
+                                        fontSize: '16px',
+                                        lineHeight: '1.4em',
+                                        color: 'rgb(92, 92, 92)',
+                                        fontWeight: 700,
+                                    }}
+                                >
+                                    {highlightText}
+                                </p>
+                            )}
+
+
+                            {/* Imagem 2 (abaixo do texto) - Menor mas mantendo proporção */}
+                            <div className="flex justify-center items-center">
+                                <div className="relative w-full max-w-md rounded-3xl overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                                    <img
+                                        src={imageUrl2}
+                                        alt={imageAlt}
+                                        className="w-full h-full object-cover"
+                                        style={{
+                                            display: 'block',
+                                            objectPosition: 'center',
+                                            objectFit: 'cover'
+                                        }}
+                                    />
+                                </div>
                             </div>
 
                             {/* Botão */}
-                            <div className="pt-4">
-                                <MoreButton text={buttonText} link={buttonLink}/> 
-                            </div>
+                            {/* <div className="pt-4">
+                                <MoreButton text={buttonText} link={buttonLink} />
+                            </div> */}
                         </div>
                     </div>
 
-                    {/* Imagem */}
+                    {/* Imagem 1 (lateral direita) */}
                     <div className="lg:w-1/2">
                         <div className="rounded-3xl overflow-hidden" style={{ height: '500px' }}>
                             <img

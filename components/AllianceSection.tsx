@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import MoreButton from './MoreButton';
+import { formatBold, formatText } from './lib/textFormatting';
 
 interface AllianceSectionProps {
     title: string; // Pode incluir **texto** para bold
@@ -20,28 +21,7 @@ export const AllianceSection: React.FC<AllianceSectionProps> = ({
   imageAlt = '',
   className = ''
 }) => {
-  // Função para processar texto com bold (**texto**)
-  const renderText = (text: string) => {
-    const parts = text.split(/(\*\*.*?\*\*)/g);
-    
-    return parts.map((part, index) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={index}>{part.slice(2, -2)}</strong>;
-      }
-      return part;
-    });
-  };
-
-  // Processa quebras de linha no título
-  const renderTitle = () => {
-    const lines = title.split('\\n');
-    return lines.map((line, index) => (
-      <React.Fragment key={index}>
-        {renderText(line)}
-        {index < lines.length - 1 && <br />}
-      </React.Fragment>
-    ));
-  };
+  
     return (
         <section className={`relative py-0 md:py-0 ${className}`}>
             {/* Background escuro */}
@@ -83,7 +63,7 @@ export const AllianceSection: React.FC<AllianceSectionProps> = ({
                                 letterSpacing: '0em',
                             }}
                         >
-                            {renderTitle()}
+                            {formatText(title)}
                         </h4>
 
                         {/* Linha divisória (visível apenas em mobile) */}
@@ -99,7 +79,7 @@ export const AllianceSection: React.FC<AllianceSectionProps> = ({
                                 lineHeight: '1.6em',
                             }}
                         >
-                            {renderText(description)}
+                            {formatBold(description)}
                         </h6>
 
                         {/* Botão */}
