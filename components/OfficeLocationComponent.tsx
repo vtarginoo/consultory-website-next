@@ -22,7 +22,7 @@ export default function OfficeLocationSection({ locations }: OfficeLocationSecti
       description: "Our headquarters in Tech City is a modern hub for innovation and collaboration, designed to bring cutting-edge ideas to life.",
       image: "/sections/office-rio.jpeg",
       city: "Rio de Janeiro, RJ",
-      address: "Av. Mal. Câmara, 160, 17° andar - Centro, Rio de Janeiro - RJ",
+      address: "Av. Mal. Câmara, 160, 17° andar (salas 1728 e 1729) - Centro",
       mapLink: "https://www.google.com/maps/search/?api=1&query=Av.+Mal.+Câmara+160+Centro+Rio+de+Janeiro",
       iFrameLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2261749095854!2d-43.17639!3d-22.90278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5a0b5e0b5b%3A0x5b5b5b5b5b5b5b5b!2sAv.%20Mal.%20C%C3%A2mara%2C%20160%20-%20Centro%2C%20Rio%20de%20Janeiro!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
     },
@@ -31,9 +31,9 @@ export default function OfficeLocationSection({ locations }: OfficeLocationSecti
       description: "Located in the heart of MetroTown, our branch office is equipped to serve clients across the East Coast with efficiency and creativity.",
       image: "/sections/office-sp.jpeg",
       city: "São Paulo, SP",
-      address: "Av. Paulista, 1000 - Bela Vista, São Paulo - SP",
-      mapLink: "https://www.google.com/maps/search/?api=1&query=Av.+Paulista+1000+Bela+Vista+São+Paulo",
-      iFrameLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1234567890123!2d-46.6543210!3d-23.5678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c7dbf9f0e3%3A0x7e7e7e7e7e7e7e7e!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+      address: "R. Gomes de Carvalho, 1629, 1⁰ andar (sala 101) - Vila Olímpia",
+      mapLink: "https://www.google.com/maps/place/R.+Gomes+de+Carvalho,+1629+-+Vila+Ol%C3%ADmpia,+S%C3%A3o+Paulo+-+SP,+04547-006/",
+      iFrameLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.238572023946!2d-46.6885883!3d-23.595775399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5748730ee8a9%3A0x4784fa2d951d9eb9!2sR.%20Gomes%20de%20Carvalho%2C%201629%20-%20Vila%20Ol%C3%ADmpia%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004547-006!5e0!3m2!1spt-BR!2sbr!4v1760479210568!5m2!1spt-BR!2sbr"
     }
   ];
 
