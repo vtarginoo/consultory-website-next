@@ -1,0 +1,58 @@
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px) translateX(var(--move-x)) rotate(var(--rotate));
+    opacity: 0;
+  }
+}
+
+.floatingLogo {
+  position: absolute;
+  opacity: 0;
+  bottom: -100px;
+  animation: floatUp linear infinite;
+}
+
+.logoCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.logoCard:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.logoImage {
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: all 0.3s;
+}
+
+.logoImage:hover {
+  opacity: 1;
+}
+
+.gridBackground {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: radial-gradient(circle, white 1px, transparent 1px);
+  background-size: 50px 50px;
+}

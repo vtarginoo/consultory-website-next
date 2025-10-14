@@ -102,8 +102,8 @@ export const clientsData: IClient[] = [
     logoComum: 'clients/c-jafra.png'
   },
   {
-    nome: 'Jill',
-    logoComum: 'clients/c-jill.avif'
+    nome: 'Jll',
+    logoComum: 'clients/c-jll.avif'
   },
   {
     nome: 'Kora Card',
@@ -141,11 +141,11 @@ export const clientsData: IClient[] = [
 
   {
     nome: 'Verzani',
-    logoComum: 'clients/c-verzani.avif'
+    logoComum: 'clients/c-verzani.png'
   },
   {
     nome: 'Vitalatte',
-    logoComum: 'clients/c-vitalatte.avif'
+    logoComum: 'clients/c-vitalatte.png'
   },
   {
     nome: 'VLI',

@@ -9,6 +9,7 @@ import { AllianceSection } from "components/AllianceSection";
 import { AckSection } from "components/AckSection";
 import { ClientsCTASection } from "components/ClientsCTASection";
 import HeroVideoSkeleton from "components/skeletons/HeroVideoSkeleton";
+import FloatingLogosWidget from "components/FloatingLogoWidget";
 
 export default function Page() {
 
@@ -157,6 +158,8 @@ Somos a **Arco Consulting Partners**, um grupo de executivos reconhecidos no mer
           title="ORGANIZAÇÕES QUE JÁ **TRANSFORMARAM** SUA GESTÃO COM A **ARCO**"
           description={"Nosso trabalho já gera resultados reais em empresas líderes de mercado."}>
         </ClientsCTASection>
+
+        <FloatingLogosWidget></FloatingLogosWidget>
 
 
 
