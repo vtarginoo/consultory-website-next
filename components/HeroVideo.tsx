@@ -71,9 +71,16 @@ export default function HeroVideo() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end">
                 {/* Coluna esquerda: Título principal */}
                 <div className="text-white">
-                  <h1 className="font-framer-title leading-tight"
+                  <h1 className="leading-tight"
                   style={{
-                     WebkitTextStroke: '0,5px currentColor',
+                    fontFamily: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif',
+                    fontWeight: '500',
+                    fontSize: 'clamp(3rem, 3vw + 1rem, 4rem)',
+                    lineHeight: '1.1em',
+                    letterSpacing: '0em',
+                    WebkitTextStroke: '0,5px currentColor',
+                    color: "#FFF",
+                    textAlign: "center",
                   }}>
                     Transformando estratégia em resultados
                   </h1>
@@ -86,12 +93,19 @@ export default function HeroVideo() {
                   </p>
                   <div className="overflow-hidden h-16 md:h-20 flex items-center">
                     <div
-                      className={`md:text-5xl  font-framer-animation transition-all duration-300 whitespace-nowrap ${isAnimating
+                      className={`transition-all duration-300 whitespace-nowrap ${isAnimating
                           ? "opacity-0 -translate-y-8"
                           : "opacity-100 translate-y-0"
                         }`} 
                         style={{
-                     WebkitTextStroke: '0,5px currentColor',
+                        fontFamily: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif',
+                        fontWeight: '500',
+                        fontSize: 'clamp(2.5rem, 3vw + 0.5rem, 3.375rem)',
+                        lineHeight: '1.1em',
+                        letterSpacing: '0em',
+                        WebkitTextStroke: '0,5px currentColor',
+                        color: "#FFF",
+                        textAlign: "center",
                   }}>
                     
                       {setores[currentIndex]}
@@ -126,7 +140,7 @@ export default function HeroVideo() {
 
               {/* Widget de Contato*/}
               
-              <ContactWidget></ContactWidget>            
+              {/* <ContactWidget></ContactWidget>             */}
 
             </div>
           </div>

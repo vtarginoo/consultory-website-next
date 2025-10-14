@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { DynamicBreadcrumb } from 'components/DynamicBreadcrumb';
 import NavigationSpinner from 'components/NavigationSpinner';
+import ContactWidget from 'components/ContactWidget';
 
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
@@ -47,6 +48,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         )}
 
         {children}
+      </div>
+
+     {/* Widget de contato fixo no canto inferior direito */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <ContactWidget />
       </div>
 
       <Footer />

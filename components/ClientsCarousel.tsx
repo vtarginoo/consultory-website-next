@@ -4,7 +4,9 @@ import { clientsData } from '@/data/clientsData';
 import React from 'react';
 
 export default function ClientsCarousel() {
-  const repeatedLogos = [...clientsData, ...clientsData, ...clientsData];
+
+  const logosBrancas = clientsData.filter(client => client.logoBranca);
+  const repeatedLogos = [...logosBrancas, ...logosBrancas, ...logosBrancas];
 
     return (
     <div className="logo-carousel-container">

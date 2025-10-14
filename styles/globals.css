@@ -61,29 +61,6 @@
 
 
 
-.font-framer-title {
-  font-family: "Instrument Sans", "Instrument Sans Placeholder", sans-serif;
-  font-weight: 500; 
-  font-style: normal;
-  font-size: 64px;
-  line-height: 1.1em;
-  letter-spacing: 0em;
-  text-align: start;
-  color: #fff;
-}
-
-.font-framer-animation {
-  font-family: "Instrument Sans", "Instrument Sans Placeholder", sans-serif;
-  font-weight: 500; 
-  font-style: normal;
-  font-size: 54px;
-  line-height: 1.1em;
-  letter-spacing: 0em;
-  text-align: start;
-  color: #fff;
-  
-}
-
 .font-framer-subtitle {
   font-family: "Instrument Sans", "Instrument Sans Placeholder", sans-serif;
   font-weight: 500;
