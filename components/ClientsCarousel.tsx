@@ -1,25 +1,12 @@
-
 "use client";
 
+import { clientsData } from '@/data/clientsData';
 import React from 'react';
 
-export default function LogoCarousel() {
- 
-  const logos = [
-    { name: "Lógum", src: "clients/b-logum.avif" },
-    { name: "Suzano", src: "clients/b-suzano.avif" },
-    { name: "Manserv", src: "clients/b-manserv.avif"},
-    { name: "ArcelorMittal", src: "clients/b-arcelor.avif"},
-    { name: "Raizen", src: "clients/b-raizen.avif"},
-    { name: "Veolia", src: "clients/b-veolia.avif"},
-    { name: "Sabesp", src: "clients/b-sabesp.avif"},
-    { name: "vibra", src: "clients/b-vibra.avif"},
-    { name: "SBM", src: "clients/b-sbm.avif"},
-  ];
-  
-  const repeatedLogos = [...logos, ...logos, ...logos];
+export default function ClientsCarousel() {
+  const repeatedLogos = [...clientsData, ...clientsData, ...clientsData];
 
-  return (
+    return (
     <div className="logo-carousel-container">
       {/* Texto "Excelência Reconhecida" */}
       <span className="logo-carousel-title">
@@ -29,11 +16,11 @@ export default function LogoCarousel() {
       {/* Container da esteira */}
       <div className="logo-carousel-wrapper">
         <ul className="logo-carousel-track">
-          {repeatedLogos.map((logo, index) => (
-            <li key={`${logo.name}-${index}`} className="logo-carousel-item">
+          {repeatedLogos.map((client, index) => (
+            <li key={`${client.nome}-${index}`} className="logo-carousel-item">
               <img 
-                src={logo.src} 
-                alt={logo.name}
+                src={client.logoBranca} 
+                alt={client.nome}
                 className="logo-carousel-image"
               />
             </li>
@@ -49,7 +36,7 @@ export default function LogoCarousel() {
           display: flex;
           flex-direction: row;
           align-items: center;
-          gap: 30px;
+          gap: 20px;
           padding: 10px 30px;
           overflow: hidden;
           flex: 1;
@@ -91,7 +78,7 @@ export default function LogoCarousel() {
         .logo-carousel-track {
           display: flex;
           flex-direction: row;
-          gap: 0px;
+          gap: 5px;
           margin: 0;
           padding: 0;
           list-style-type: none;
@@ -106,6 +93,7 @@ export default function LogoCarousel() {
         .logo-carousel-item {
           flex-shrink: 0;
           opacity: 1;
+          width: clamp(60px, 8vw, 100px);
         }
 
         .logo-carousel-image {
@@ -123,11 +111,11 @@ export default function LogoCarousel() {
         }
 
         @keyframes scroll-logos {
-          0% {
+          from {
             transform: translateX(0);
           }
-          100% {
-            transform: translateX(-33.333%);
+          to {
+            transform: translateX(calc(-1 * (100px + 5px) * 14));
           }
         }
       `}</style>

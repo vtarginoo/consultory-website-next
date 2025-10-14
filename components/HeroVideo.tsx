@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import LogoCarousel from "./LogoCarousel";
+
 import ContactWidget from "./ContactWidget";
+import ClientsCarousel from "./ClientsCarousel";
 
 interface HeroVideoProps {
   videoSrc: string;
@@ -121,7 +122,7 @@ export default function HeroVideo() {
             <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
               {/* Seção de logos "Excelência Reconhecida" */}
               
-              <LogoCarousel></LogoCarousel>
+              <ClientsCarousel/>
 
               {/* Widget de Contato*/}
               

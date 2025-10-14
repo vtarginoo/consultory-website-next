@@ -1,5 +1,6 @@
 import OurJourney from "components/OurJourney";
 import OurValuesSection from "components/OurValuesSection";
+import PartnersSection from "components/PartnersSection";
 import QuemSomosVideoSection from "components/QuemSomosVideoSection";
 
 export default function Page() {
@@ -23,7 +24,7 @@ export default function Page() {
           titleColor="#FFFF"
         ></OurValuesSection>
 
-
+      <PartnersSection></PartnersSection>
 
 
 
