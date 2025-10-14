@@ -51,9 +51,9 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       </div>
 
      {/* Widget de contato fixo no canto inferior direito */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <ContactWidget />
-      </div>
+      {/* <div className="fixed bottom-6 right-6 z-50"> */}
+        {/* ??<ContactWidget /> */}
+      {/* </div> */}
 
       <Footer />
     </>

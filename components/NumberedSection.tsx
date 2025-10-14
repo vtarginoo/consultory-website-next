@@ -67,7 +67,7 @@ export const NumberedSection: React.FC<NumberedSectionProps> = ({
                     style={{
                         fontFamily: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif',
                         fontSize: '54px',
-                        fontWeight: 600,
+                        fontWeight: 500,
                         lineHeight: '1.2em',
                         color: '#222222',
                         fontStyle: 'normal',

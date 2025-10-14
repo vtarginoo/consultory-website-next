@@ -80,7 +80,7 @@ export default function HeroVideo() {
                     letterSpacing: '0em',
                     WebkitTextStroke: '0,5px currentColor',
                     color: "#FFF",
-                    textAlign: "center",
+                    textAlign: "left",
                   }}>
                     Transformando estratégia em resultados
                   </h1>
@@ -105,7 +105,7 @@ export default function HeroVideo() {
                         letterSpacing: '0em',
                         WebkitTextStroke: '0,5px currentColor',
                         color: "#FFF",
-                        textAlign: "center",
+                        textAlign: "left",
                   }}>
                     
                       {setores[currentIndex]}

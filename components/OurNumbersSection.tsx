@@ -108,22 +108,25 @@ export const OurNumbersSection: React.FC<OurNumbersSectionProps> = ({
                   }`}
                 >
                   <div 
-                    className="text-gray-900 mb-2"
+                    className="mb-2"
                     style={{
                       fontFamily: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif',
                       fontSize: 'clamp(40px, 8vw, 64px)',
-                      fontWeight: 700,
-                      lineHeight: '1',
+                      fontWeight: 500,
+                      lineHeight: '70.4px',
+                      color: 'rgb(27, 29, 31)'
                     }}
                   >
                     {stat.number}
                   </div>
                   <p 
-                    className="text-gray-600"
+                    className=""
                     style={{
                       fontFamily: '"DM Sans", "DM Sans Placeholder", sans-serif',
                       fontSize: 'clamp(14px, 2.5vw, 18px)',
-                      lineHeight: '1.4',
+                      fontWeight: 500,
+                      lineHeight: '25.2px',
+                      color:'rgba(27, 29, 31, 0.8)'
                     }}
                   >
                     {stat.description}
