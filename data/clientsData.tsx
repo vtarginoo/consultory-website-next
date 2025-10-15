@@ -5,7 +5,8 @@ export const clientsData: IClient[] = [
   {
     nome: 'Lógum',
 
-    logoBranca: 'clients/b-logum.avif'
+    logoBranca: 'clients/b-logum.avif',
+    logoComum: 'clients/c-logum.png',
   },
   {
     nome: 'Suzano',
@@ -44,26 +45,33 @@ export const clientsData: IClient[] = [
   },
   {
     nome: 'Vibra',
-    logoBranca: 'clients/b-vibra.avif'
+    logoBranca: 'clients/b-vibra.avif',
+    logoComum: 'clients/c-vibra.png',
   },
   {
     nome: 'SBM',
-    logoBranca: 'clients/b-sbm.avif'
+    logoBranca: 'clients/b-sbm.avif',
+    logoComum: 'clients/c-sbm.png',
   },
   {
     nome: 'Gi Group',
-    logoBranca: 'clients/b-gigroup.avif'
+    logoBranca: 'clients/b-gigroup.avif',
+    logoComum: 'clients/c-gigroup.png',
   },
   {
     nome: 'Yduqs',
-    logoBranca: 'clients/b-yduqs.avif'
+    logoBranca: 'clients/b-yduqs.avif',
+    logoComum: 'clients/c-yduqs.png',
   },
   {
     nome: 'Concrejato',
-    logoBranca: 'clients/b-concrejato.avif'
+    logoBranca: 'clients/b-concrejato.avif',
+    logoComum: 'clients/c-concrejato.png',
+    
   }, {
     nome: 'Comerc',
-    logoBranca: 'clients/b-comerc.avif'
+    logoBranca: 'clients/b-comerc.avif',
+    logoComum: 'clients/c-comerc.webp',
   },
   {
     nome: 'Ancar Ivanhoe',

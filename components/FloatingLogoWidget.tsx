@@ -1,75 +1,131 @@
 "use client"
 
 import { clientsData } from "@/data/clientsData";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from '../styles/FloatingLogosWidget.module.css'
-
+import FloatingLogo from "./FloatingLogo";
 
 
 const clientsWithLogo = clientsData.filter(client => client.logoComum);
 
-const FloatingLogo = ({ client, delay, duration, startX, moveX, rotate }) => {
-  return (
-    <div
-      className={styles.floatingLogo}
-      style={{
-        left: `${startX}%`,
-        animationDelay: `${delay}s`,
-        animationDuration: `${duration}s`,
-        ['--move-x' as any]: `${moveX}px`,
-        ['--rotate' as any]: `${rotate}deg`,
-      }}
-    >
-      <div className={styles.logoCard}>
-        <img 
-          src={`/${client.logoComum}`} 
-          alt={client.nome}
-          className={styles.logoImage}
-        />
-      </div>
-    </div>
-  );
-};
+
 
 export default function FloatingLogosWidget() {
   const [logos, setLogos] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const logosRef = useRef([]);
+  useEffect(() => {
+    logosRef.current = logos;
+  }, [logos]);
+
+  // Rotação circular para cada zona
+  const zoneRotationRef = useRef({
+    0: { sequence: [], currentIndex: 0 }, // esquerda
+    1: { sequence: [], currentIndex: 0 }, // centro
+    2: { sequence: [], currentIndex: 0 }  // direita
+  });
+
+  const currentZoneRef = useRef(0);
+  const logoIdRef = useRef(0);
 
   useEffect(() => {
-    let logoId = 0;
-    let lastUsedClient = null;
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-    // Função para gerar um único logo (sem repetir o último)
+  useEffect(() => {
+    // Define as zonas (esquerda, centro, direita)
+    const zones = [
+      { min: 5, max: 25 },    // Esquerda
+      { min: 40, max: 60 },   // Centro
+      { min: 75, max: 95 }    // Direita
+    ];
+
+    // Função para embaralhar um array (Fisher-Yates shuffle)
+    const shuffleArray = (array) => {
+      const shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+
+    // Inicializa a sequência de uma zona se ainda não existir
+    const initializeZoneSequence = (zoneIndex) => {
+      if (zoneRotationRef.current[zoneIndex].sequence.length === 0) {
+        // Cria uma sequência embaralhada de todos os clientes
+        zoneRotationRef.current[zoneIndex].sequence = shuffleArray([...clientsWithLogo]);
+        zoneRotationRef.current[zoneIndex].currentIndex = 0;
+      }
+    };
+
+    // Função para selecionar o próximo cliente na rotação da zona
+    const getNextClientForZone = (zoneIndex) => {
+      initializeZoneSequence(zoneIndex);
+      const zoneData = zoneRotationRef.current[zoneIndex];
+      const selectedClient = zoneData.sequence[zoneData.currentIndex];
+      zoneData.currentIndex = (zoneData.currentIndex + 1) % zoneData.sequence.length;
+      if (zoneData.currentIndex === 0) {
+        zoneData.sequence = shuffleArray([...clientsWithLogo]);
+      }
+      return selectedClient;
+    };
+
     const generateSingleLogo = () => {
       let randomClient;
-      
-      // Se há mais de um cliente disponível, evita repetir o último
-      if (clientsWithLogo.length > 1) {
-        do {
-          randomClient = clientsWithLogo[Math.floor(Math.random() * clientsWithLogo.length)];
-        } while (lastUsedClient && randomClient.nome === lastUsedClient.nome);
+      let startX;
+      let zoneIndex;
+      const minDistance = 10; // distância mínima entre logos
+
+      if (isMobile) {
+        startX = Math.random() * 70 + 15;
+        randomClient = getNextClientForZone(0);
       } else {
-        randomClient = clientsWithLogo[0];
+        zoneIndex = currentZoneRef.current;
+        const zone = zones[zoneIndex];
+        startX = Math.random() * (zone.max - zone.min) + zone.min;
+        randomClient = getNextClientForZone(zoneIndex);
+        currentZoneRef.current = (currentZoneRef.current + 1) % zones.length;
       }
-      
-      lastUsedClient = randomClient;
-      
+
+      // Evita que o logo nasça muito próximo de outro
+      const maxAttempts = 10;
+      let attempts = 0;
+      while (logosRef.current.some(l => Math.abs(l.startX - startX) < minDistance) && attempts < maxAttempts) {
+        startX = Math.random() * (isMobile ? 70 : (zones[zoneIndex].max - zones[zoneIndex].min)) + (isMobile ? 15 : zones[zoneIndex].min);
+        attempts++;
+      }
+
+      // Evita startX muito próximo do último logo
+      const lastLogo = logosRef.current[logosRef.current.length - 1];
+      if (lastLogo && Math.abs(startX - lastLogo.startX) < 10) {
+        startX = (startX + 15) % 100; // desloca um pouco
+      }
+
       return {
-        id: `logo-${logoId++}-${Date.now()}`,
+        id: `logo-${logoIdRef.current++}-${Date.now()}`,
         client: randomClient,
-        delay: 0, // Sem delay inicial, começa imediatamente
+        delay: 0,
         duration: 15 + Math.random() * 10,
-        startX: Math.random() * 80 + 10,
-        moveX: Math.random() * 100 - 50,
-        rotate: Math.random() * 20 - 10,
+        startX,
+        moveX: Math.random() * 30 - 15,
+        rotate: Math.random() * 15 - 7.5,
+        scale: 0.95 + Math.random() * 0.2,
       };
     };
 
-    // Inicializa com vários logos distribuídos
+    // Inicializa com logos distribuídos
     const initialLogos = [];
-    for (let i = 0; i < 8; i++) {
+    const initialCount = isMobile ? 5 : 9;
+
+    for (let i = 0; i < initialCount; i++) {
       const logo = generateSingleLogo();
-      // Distribui os logos iniciais ao longo da animação
-      logo.delay = (i * 2.5); // Espaçamento de 2.5s entre cada logo
+      logo.delay = (i * 2.5);
       initialLogos.push(logo);
     }
     setLogos(initialLogos);
@@ -78,39 +134,40 @@ export default function FloatingLogosWidget() {
     const interval = setInterval(() => {
       setLogos(prevLogos => {
         const newLogo = generateSingleLogo();
-        
-        // Remove logos antigos (mantém no máximo 12 logos na tela)
-        const updatedLogos = prevLogos.length > 10 
-          ? prevLogos.slice(1) 
+        newLogo.delay = Math.random() * 3; // espaçamento aleatório entre 0 e 3s
+        const maxLogos = isMobile ? 8 : 12;
+
+        const updatedLogos = prevLogos.length > maxLogos
+          ? prevLogos.slice(1)
           : prevLogos;
-        
+
         return [...updatedLogos, newLogo];
       });
-    }, 2500); // Adiciona um novo logo a cada 2.5 segundos
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isMobile]);
+
+  // atualiza posição final (quando soltar após drag)
+  const handleUpdatePosition = (id, { pinned, pinnedLeftPercent, pinnedTopPx }) => {
+    setLogos(prev => prev.map(l => l.id === id ? { ...l, pinned: !!pinned, pinnedLeftPercent, pinnedTopPx } : l));
+  };
 
   return (
-    <div className="relative h-[200px] w-full overflow-hidden">
+    <div ref={containerRef} className="relative h-[140px] md:h-[180px] w-full overflow-hidden">
       {/* Grid de fundo sutil */}
       <div className={styles.gridBackground} />
 
       {/* Logos flutuantes */}
       {logos.map((logo) => (
-        <FloatingLogo 
-          key={logo.id} 
-          client={logo.client} 
-          delay={logo.delay} 
-          duration={logo.duration} 
-          startX={logo.startX}
-          moveX={logo.moveX}
-          rotate={logo.rotate}
+        <FloatingLogo
+          key={logo.id}
+          logo={logo}
         />
       ))}
 
-      {/* Gradiente de fade no topo (opcional - remova se não quiser) */}
-      <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-transparent pointer-events-none" />
+      {/* Gradiente de fade no topo */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-transparent pointer-events-none" />
     </div>
   );
 }

@@ -31,6 +31,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="video/mp4"
         />
 
+        {/* Preload da imagem do avatar*/}
+        <link
+          rel="preload"
+          href="/avatar-image.avif"
+          as="image"
+          type="image/avif"
+        />
+
       </head>
       <body className="bg-white dark:bg-black min-h-screen">
         <ClientLayout>

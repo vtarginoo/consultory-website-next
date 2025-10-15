@@ -84,7 +84,7 @@ export default function ClientsCarousel() {
           margin: 0;
           padding: 0;
           list-style-type: none;
-          animation: scroll-logos 10s linear infinite;
+          animation: scroll-logos 20s linear infinite;
           will-change: transform;
         }
 
