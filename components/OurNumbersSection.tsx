@@ -2,6 +2,8 @@
 
 import React from 'react';
 import MoreButton from './MoreButton';
+import Image from 'next/image';
+
 
 interface StatItem {
   number: string;
@@ -36,12 +38,13 @@ export const OurNumbersSection: React.FC<OurNumbersSectionProps> = ({
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Imagem */}
-          <div className="lg:w-1/2">
-            <img 
-              src={imageUrl}
+          <div className="lg:w-1/2 relative w-full h-[400px] lg:h-[600px]">
+            <Image 
+              src={imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`} // garante caminho correto
               alt={imageAlt}
-              className="w-full h-auto rounded-lg object-cover"
-              style={{ maxHeight: '600px' }}
+              fill
+              className="rounded-lg object-cover"
+              priority={true} // se a imagem for crítica para o carregamento
             />
           </div>
 
@@ -120,7 +123,6 @@ export const OurNumbersSection: React.FC<OurNumbersSectionProps> = ({
                     {stat.number}
                   </div>
                   <p 
-                    className=""
                     style={{
                       fontFamily: '"DM Sans", "DM Sans Placeholder", sans-serif',
                       fontSize: 'clamp(14px, 2.5vw, 18px)',
@@ -134,7 +136,8 @@ export const OurNumbersSection: React.FC<OurNumbersSectionProps> = ({
                 </div>
               ))}
             </div>
-           <MoreButton text={buttonText} link={buttonLink}/>
+
+            <MoreButton text={buttonText} link={buttonLink}/>
           </div>
         </div>
       </div>

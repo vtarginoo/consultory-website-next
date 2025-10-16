@@ -1,23 +1,26 @@
 "use client";
 
+import Image from 'next/image'
 import React, { useState } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import MoreButton from './MoreButton';
 
+// Definição da interface (mantida para contexto)
 interface Solution {
   id: number;
   title: string;
   description: string;
-  imageNumber: number;
   link?: string;
+  imageNumber: number;
 }
-
 interface SolutionsMenuProps {
   title?: string;
   subtitle?: string;
   solutions: Solution[];
   className?: string;
 }
+
+
 
 export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
   title = 'CONTRATE NOSSAS',
@@ -31,10 +34,15 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
     setOpenIndex(openIndex === index ? -1 : index);
   };
 
+  // 2. Definir a URL da imagem dinamicamente
+  const currentSolution = openIndex >= 0 && openIndex < solutions.length ? solutions[openIndex] : null;
+  const currentImageUrl = currentSolution ? `/solutions/solution${currentSolution.imageNumber}.avif` : null;
+  const currentImageAlt = currentSolution ? currentSolution.title : 'Imagem da Solução';
+
   return (
     <section className={`py-16 ${className}`}>
       <div className="container mx-auto px-4">
-        {/* Título */}
+        {/* Título (Sem alterações) */}
         <div className="text-center mb-12">
           <h2 
             className="uppercase mb-1"
@@ -64,8 +72,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
             DO DIAGNÓSTICO A <strong style={{ fontWeight: 800 }}>CAPTURA DE VALOR</strong>
           </p>
 
-
-          {/* Divisor */}
+          {/* Divisor (Sem alterações) */}
           <div className="flex justify-center">
             <div 
               style={{
@@ -80,7 +87,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
 
         {/* Grid com Cards e Imagem */}
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Lista de Soluções */}
+          {/* Lista de Soluções (Sem alterações no loop) */}
           <div className="lg:w-1/2 space-y-4">
             {solutions.map((solution, index) => (
               <div
@@ -90,13 +97,13 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
                   backgroundColor: 'rgba(0, 0, 0, 0.05)',
                 }}
               >
-                {/* Header do Card */}
+                {/* Header do Card (Sem alterações) */}
                 <button
                   onClick={() => toggleSolution(index)}
                   className="w-full p-6 flex items-start justify-between text-left"
                 >
                   <div className="flex items-start gap-4 flex-1">
-                    {/* Número */}
+                    {/* Número (Sem alterações) */}
                     <span
                       style={{
                         fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
@@ -108,7 +115,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
                       {String(solution.id).padStart(2, '0')}.
                     </span>
 
-                    {/* Título */}
+                    {/* Título (Sem alterações) */}
                     <div className="flex-1">
                       <h5
                         style={{
@@ -126,7 +133,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
                     </div>
                   </div>
 
-                  {/* Ícone */}
+                  {/* Ícone (Sem alterações) */}
                   <div
                     className="ml-4 flex items-center justify-center transition-transform duration-300"
                     style={{
@@ -141,7 +148,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
                   </div>
                 </button>
 
-                {/* Conteúdo Expansível */}
+                {/* Conteúdo Expansível (Sem alterações) */}
                 {openIndex === index && (
                   <div className="px-6 pb-6 animate-in slide-in-from-top-2">
                     <div className="pl-12">
@@ -158,10 +165,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
                       </p>
 
                       {/* Botão Ver Mais */}
-                    
-                    <MoreButton text={'VEJA MAIS'} link={solution.link || '#'}/> 
-
-                      
+                      <MoreButton text={'VEJA MAIS'} link={solution.link || '#'}/> 
                     </div>
                   </div>
                 )}
@@ -169,24 +173,32 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
             ))}
           </div>
 
-          {/* Imagem */}
+          {/* IMAGEM LATERAL - Refatorada para <Image /> */}
           <div className="lg:w-1/2">
             <div 
+              // Adicionamos 'relative' para o Image funcionar com 'fill'
               className="relative rounded-3xl overflow-hidden"
               style={{ 
                 height: '600px',
                 backgroundColor: '#f0f0f0',
               }}
             >
-              {openIndex >= 0 && openIndex < solutions.length && (
+              {currentSolution && currentImageUrl && (
                 <>
-                  <img
-                    src={`/solutions/solution${solutions[openIndex].imageNumber}.avif`}
-                    alt={solutions[openIndex].title}
-                    className="w-full h-full object-cover transition-opacity duration-500"
+                  <Image
+                    src={currentImageUrl}
+                    alt={currentImageAlt}
+                    // OBRIGATÓRIO: Faz a imagem preencher 100% do div pai
+                    layout="fill"
+                    // Aplica o corte da imagem
+                    objectFit="cover"
+                    // Otimiza a transição de opacidade quando a imagem muda
+                    className="transition-opacity duration-500" 
+                    // priority é crucial para carregar a primeira imagem principal
+                    priority={openIndex === 0} 
                   />
                   
-                  {/* Badge com número */}
+                  {/* Badge com número (Sem alterações) */}
                   <div
                     className="absolute top-6 left-6 px-6 py-3 rounded-xl"
                     style={{
@@ -201,7 +213,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
                         color: 'rgb(255, 255, 255)',
                       }}
                     >
-                      {String(solutions[openIndex].id).padStart(2, '0')}
+                      {String(currentSolution.id).padStart(2, '0')}
                     </span>
                   </div>
                 </>

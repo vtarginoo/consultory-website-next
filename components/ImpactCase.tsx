@@ -1,7 +1,6 @@
 import React from 'react';
-import { Check } from 'lucide-react';
-import MoreButton from './MoreButton';
 import { formatBold } from './lib/textFormatting';
+import Image from 'next/image';
 
 interface ImpactCaseProps {
     category: string;
@@ -67,7 +66,7 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
                     {/* Texto e Imagem 2 */}
                     <div className="lg:w-1/2">
                         <div className="space-y-6">
-                            {/* Badge de Categoria */}
+                            {/* Badge de Categoria (Sem alterações) */}
                             <div className="flex items-center gap-3">
                                 <div
                                     style={{
@@ -91,7 +90,7 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
                                 </span>
                             </div>
 
-                            {/* Título */}
+                            {/* Título (Sem alterações) */}
                             <h3
                                 style={{
                                     fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
@@ -104,7 +103,7 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
                                 {title}
                             </h3>
 
-                            {/* Descrição */}
+                            {/* Descrição (Sem alterações) */}
                             <p
                                 style={{
                                     fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
@@ -116,7 +115,7 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
                                 {formatBold(description)}
                             </p>
 
-                            {/* Texto destacado (opcional) */}
+                            {/* Texto destacado (opcional) (Sem alterações) */}
                             {highlightText && (
                                 <p
                                     style={{
@@ -132,18 +131,18 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
                             )}
 
 
-                            {/* Imagem 2 (abaixo do texto) - Menor mas mantendo proporção */}
+                            {/* IMAGEM 2 - Refatorada para <Image /> */}
                             <div className="flex justify-center items-center">
+                                {/* O 'relative' no contêiner permite que 'layout="fill"' funcione */}
                                 <div className="relative w-full max-w-md rounded-3xl overflow-hidden" style={{ aspectRatio: '3/2' }}>
-                                    <img
+                                    <Image
                                         src={imageUrl2}
                                         alt={imageAlt}
-                                        className="w-full h-full object-cover"
-                                        style={{
-                                            display: 'block',
-                                            objectPosition: 'center',
-                                            objectFit: 'cover'
-                                        }}
+                                        // Usa o tamanho definido pelo div pai
+                                        layout="fill"
+                                        // Aplica o corte da imagem
+                                        objectFit="cover"
+                                        // Por ser a segunda imagem, o Lazy Loading (padrão) é bom
                                     />
                                 </div>
                             </div>
@@ -155,13 +154,19 @@ export const ImpactCase: React.FC<ImpactCaseProps> = ({
                         </div>
                     </div>
 
-                    {/* Imagem 1 (lateral direita) */}
+                    {/* IMAGEM 1 (lateral direita) - Refatorada para <Image /> */}
                     <div className="lg:w-1/2">
-                        <div className="rounded-3xl overflow-hidden" style={{ height: '500px' }}>
-                            <img
+                        {/* Adicionamos 'relative' para o Image funcionar com 'fill' */}
+                        <div className="relative rounded-3xl overflow-hidden" style={{ height: '500px' }}>
+                            <Image
                                 src={imageUrl}
                                 alt={imageAlt}
-                                className="w-full h-full object-cover"
+                                // Usa o tamanho definido pelo div pai (height: 500px e w-full)
+                                layout="fill"
+                                // Aplica o corte da imagem
+                                objectFit="cover"
+                                // Esta provavelmente é a imagem principal na dobra, bom para usar 'priority'
+                                priority
                             />
                         </div>
                     </div>

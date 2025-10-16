@@ -2,6 +2,7 @@
 
 import { clientsData } from '@/data/clientsData';
 import React from 'react';
+import Image from 'next/image';
 
 export default function ClientsCarousel() {
 
@@ -20,10 +21,12 @@ export default function ClientsCarousel() {
         <ul className="logo-carousel-track">
           {repeatedLogos.map((client, index) => (
             <li key={`${client.nome}-${index}`} className="logo-carousel-item">
-              <img 
-                src={client.logoBranca} 
-                alt={client.nome}
-                className="logo-carousel-image"
+              <Image 
+              src={client.logoBranca} 
+              alt={client.nome}
+              width={150}   
+              height={50}   
+              className="logo-carousel-image"
               />
             </li>
           ))}
