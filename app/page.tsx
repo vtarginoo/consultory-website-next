@@ -33,9 +33,9 @@ export default function Page() {
     },
     {
       number: 4,
-      title: 'Logo CIEC', // Usado como alt text
-      image: '/logo/logo-ciec.avif',
-      onlyImage: true, // Mostra apenas a imagem, sem texto
+      title: 'CIEC Academy', // Usado como alt text
+      // image: '/logo/logo-ciec.avif',
+      // onlyImage: true, // Mostra apenas a imagem, sem texto
       link: 'https://ciecacademy.com.br/'
     }
   ];

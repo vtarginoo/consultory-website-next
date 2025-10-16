@@ -37,11 +37,12 @@ export const NumberedSection: React.FC<NumberedSectionProps> = ({
             );
         }
 
-        // Se não, renderiza o texto
+        // Se não, renderiza o texto com largura definida
         return (
-            <div className="flex flex-col">
-                <span className="text-sm md:text-base font-semibold text-gray-800 uppercase"
-                 style={{
+            <div className="flex flex-col w-32 md:w-40">
+                <span 
+                    className="text-sm md:text-base font-semibold text-gray-800 uppercase break-words"
+                    style={{
                         fontFamily: '"DM Sans", "DM Sans Placeholder", "sans-serif"',
                         fontSize: '14px',
                         fontWeight: 500,
@@ -49,14 +50,13 @@ export const NumberedSection: React.FC<NumberedSectionProps> = ({
                         textTransform: 'uppercase',
                         color: '#222222',
                         fontStyle: 'normal',
-                    }}>
+                    }}
+                >
                     {item.title}
                 </span>
             </div>
         );
     };
-
-    
 
     const renderItem = (item: NumberedItem, index: number) => {
         // Renderização: número + divisor + (texto OU imagem)
@@ -75,9 +75,7 @@ export const NumberedSection: React.FC<NumberedSectionProps> = ({
                 >
                     {item.number}
                 </span>
-                <div
-                    className="h-16 w-[3px] bg-[#ce9c5d]"
-                />
+                <div className="h-16 w-[3px] bg-[#ce9c5d]" />
 
                 {renderRightContent(item)}
             </div>
