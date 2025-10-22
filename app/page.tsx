@@ -95,6 +95,13 @@ Somos a **Arco Consulting Partners**, um grupo de executivos reconhecidos no mer
       imageNumber: 5,
       link: '/solucoes/capital-projects',
     },
+    {
+      id: 6,
+      title: 'Supply Chain + S&OP',
+      description: 'Apoiamos empresas a integrar e otimizar toda a cadeia de suprimentos — do planejamento ao fulfillment — por meio de modelos avançados de S&OP, gestão de demanda, planejamento logístico e estratégias de contratação que aumentam a eficiência operacional, reduzem custos e elevam o nível de serviço.',
+      imageNumber: 6,
+      link: '/solucoes/supply-chain-+-s&op',
+    },
   ];
 
   // const caseData = {

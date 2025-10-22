@@ -16,13 +16,13 @@ const teamMembers: TeamMember[] = [
     {
         name: 'Rodrigo Colombaretti',
         role: 'Co-Founder & CEO',
-        image: '/employee/partner-2.png',
+        image: '/employee/partner-2.jpeg',
         resume: "Executivo com 25 anos em multinacionais de grande porte, especialista em estratégia, logística, finanças e planejamento. Engenheiro Químico e advogado, com formações no MIT, IMD e COPPEAD."
     },
     {
         name: 'Vinícius Aquino',
         role: 'Co-Founder & COO',
-        image: '/employee/partner-3.png',
+        image: '/employee/partner-3.jpg',
         resume: "20 anos de experiência em consultoria, redução de custos e excelência operacional. Atuou em projetos que geraram mais de R$ 1 bilhão em resultados. Administrador pela PUC-RJ, com passagens por KPMG e BrainNet."
     },
     {
