@@ -173,10 +173,9 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
             ))}
           </div>
 
-          {/* IMAGEM LATERAL - Refatorada para <Image /> */}
+          {/* IMAGEM LATERAL - Ajustada para não cortar */}
           <div className="lg:w-1/2">
             <div 
-              // Adicionamos 'relative' para o Image funcionar com 'fill'
               className="relative rounded-3xl overflow-hidden"
               style={{ 
                 height: '600px',
@@ -188,13 +187,9 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
                   <Image
                     src={currentImageUrl}
                     alt={currentImageAlt}
-                    // OBRIGATÓRIO: Faz a imagem preencher 100% do div pai
                     layout="fill"
-                    // Aplica o corte da imagem
-                    objectFit="cover"
-                    // Otimiza a transição de opacidade quando a imagem muda
+                    objectFit="contain"
                     className="transition-opacity duration-500" 
-                    // priority é crucial para carregar a primeira imagem principal
                     priority={openIndex === 0} 
                   />
                   

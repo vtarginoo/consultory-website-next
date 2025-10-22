@@ -1,10 +1,9 @@
 
-import HeroVideo from "components/HeroVideo";
 import { NumberedSection } from "components/NumberedSection";
 import { DNASection } from "components/DNASection";
 import { OurNumbersSection } from "components/OurNumbersSection";
 import { SolutionsMenu } from "components/SolutionsMenu";
-import { ImpactCase } from "components/ImpactCase";
+import {  ImpactCaseCarousel } from "components/ImpactCaseCarousel";
 import { AllianceSection } from "components/AllianceSection";
 import { AckSection } from "components/AckSection";
 import { ClientsCTASection } from "components/ClientsCTASection";
@@ -98,15 +97,15 @@ Somos a **Arco Consulting Partners**, um grupo de executivos reconhecidos no mer
     },
   ];
 
-  const caseData = {
-    category: 'Oil & Gás',
-    title: 'Aplicação do Diagnóstico Estratégico de Procurement e Strategic Sourcing em um líder global de Oil & Gas',
-    description: 'Nas operações de FPSO, a área de procurement enfrentava baixa autonomia e pouco reconhecimento estratégico; o diagnóstico identificou mais de USD 100 milhões em oportunidades potenciais e gerou, já nos quick wins, mais de USD 20 milhões em reduções de custo incorporadas ao planejamento estratégico, tendo como motor a aplicação de alavancas de valor que aproximaram procurement das operações, ampliando sua visibilidade e posicionamento estratégico',
-    highlightText: "A aplicação combinada das alavancas de procurement gerou reduções significativas, com as maiores oportunidades sendo capturadas quando múltiplas alavancas foram utilizadas em conjunto.",
-    imageUrl: "/cases/oil-gas.webp",
-    imageUrl2: "/cases/oil-gas2.avif",
-    buttonLink: '/cases/oil-gas',
-  };
+  // const caseData = {
+  //   category: 'Oil & Gás',
+  //   title: 'Aplicação do Diagnóstico Estratégico de Procurement e Strategic Sourcing em um líder global de Oil & Gas',
+  //   description: 'Nas operações de FPSO, a área de procurement enfrentava baixa autonomia e pouco reconhecimento estratégico; o diagnóstico identificou mais de USD 100 milhões em oportunidades potenciais e gerou, já nos quick wins, mais de USD 20 milhões em reduções de custo incorporadas ao planejamento estratégico, tendo como motor a aplicação de alavancas de valor que aproximaram procurement das operações, ampliando sua visibilidade e posicionamento estratégico',
+  //   highlightText: "A aplicação combinada das alavancas de procurement gerou reduções significativas, com as maiores oportunidades sendo capturadas quando múltiplas alavancas foram utilizadas em conjunto.",
+  //   imageUrl: "/cases/oil-gas.webp",
+  //   imageUrl2: "/cases/oil-gas2.avif",
+  //   buttonLink: '/cases/oil-gas',
+  // };
 
   const textAliancaGt = `
           A aliança entre a **Grant Thornton Brasil** e a **ARCO**\n
@@ -114,6 +113,20 @@ Somos a **Arco Consulting Partners**, um grupo de executivos reconhecidos no mer
           uma com a excelência na entrega de resultados.
 `;
 
+const textContent = `
+        <p>Somando <em><strong>experiências</strong></em> em áreas<em> <strong>estratégicas</strong></em> de empresas diversas, temos a habilidade de <em><strong>detectar e implantar</strong></em> iniciativas de impacto positivo e sustentável.</p>
+        <p>Utilizamos <em><strong>metodologia própria</strong></em> para desenvolver, de forma colaborativa, projetos que se encaixem nas demandas e momentos de cada um. Afinal, as necessidades dos nossos clientes estão em <strong><em>constante mudança</em></strong>.</p>
+        <p>Nos dedicamos, lado a lado, a transformar <strong><em>estratégia em resultados</em></strong>, de forma <strong><em>transparente</em></strong>, <strong><em>rápida e inovadora</em></strong>. Assumimos integral ou parcialmente a gestão das iniciativas, com aporte de experiência e <strong><em>capacidade de rápida implementação</em></strong>.</p>
+        <p>Nosso formato de trabalho se configura como <strong><em>assessoria estratégica</em></strong> e é <strong><em>totalmente pró-ativo</em></strong>.</p>
+    `;
+
+    const carouselImages = [
+        '/cases/case-1.png',
+        '/cases/case-2.png',
+        '/cases/case-3.png',
+        '/cases/case-4.png',
+        '/cases/case-5.png',
+    ];
 
 
 
@@ -141,7 +154,11 @@ Somos a **Arco Consulting Partners**, um grupo de executivos reconhecidos no mer
         <SolutionsMenu solutions={solutionsData}></SolutionsMenu>
 
 
-        <ImpactCase {...caseData} />
+        <ImpactCaseCarousel
+            textContent={textContent}
+            imageUrl1="/cases/Case-post.jpg"
+            carouselImages={carouselImages}
+        />
 
         <AllianceSection
           title="NOSSA **ALIANÇA** COM\n A **GRANT THORNTON**"

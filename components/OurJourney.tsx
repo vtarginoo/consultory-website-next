@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { formatBold, formatText } from './lib/textFormatting';
+import Timeline from './Timeline';
 
 
 interface OurJourneyProps {
@@ -18,7 +19,7 @@ export const OurJourney: React.FC<OurJourneyProps> = ({
     imageAlt = "Nossa Jornada pela Excelência Operacional",
     imageSrc2 = "/sections/graphic-quem-somos.png",
     imageAlt2 = "Gráfico Excelência Operacional",
-    
+
     className = ''
 }) => {
     return (
@@ -65,16 +66,12 @@ export const OurJourney: React.FC<OurJourneyProps> = ({
                     />
                 </div>
 
-                {/* Timeline Image */}
+                {/* Timeline Component */}
                 <div className="timeline mt-8 md:mt-12 relative w-full">
-                    <Image
-                        src={imageSrc2}
-                        alt={imageAlt2}
-                        width={1427}
-                        height={441}
-                        className="w-full h-auto"
-                    />
+                    <Timeline />
                 </div>
+
+
             </div>
         </section>
     );
