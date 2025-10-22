@@ -32,7 +32,7 @@ export default function HeroVideoSkeleton() {
   useEffect(() => {
     // Pré-carrega o vídeo
     const video = document.createElement('video');
-    video.src = 'https://www.youtube.com/watch?v=LkyHAxwG58k';
+    video.src = 'https://res.cloudinary.com/dztt17ads/video/upload/v1761096826/video-home_f3mpf3.mp4';
     video.preload = 'auto';
     
     const handleCanPlay = () => {
