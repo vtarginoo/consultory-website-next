@@ -137,7 +137,7 @@ export const OurNumbersSection: React.FC<OurNumbersSectionProps> = ({
               ))}
             </div>
 
-            <MoreButton text={buttonText} link={buttonLink}/>
+            {/* <MoreButton text={buttonText} link={buttonLink}/> */}
           </div>
         </div>
       </div>

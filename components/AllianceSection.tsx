@@ -84,7 +84,7 @@ export const AllianceSection: React.FC<AllianceSectionProps> = ({
 
                         {/* Botão */}
 
-                        <MoreButton text={'Veja Mais'} link={"/arco-gt"}></MoreButton>
+                        {/* <MoreButton text={'Veja Mais'} link={"/arco-gt"}></MoreButton> */}
 
                     </div>
                 </div>

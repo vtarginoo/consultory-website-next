@@ -28,28 +28,42 @@ export default function Footer() {
               />
             </div>
 
-            {/* Decorative line SVG */}
-            <div className="w-14 h-[2px] bg-[#CE9C5D]"></div>
-
-            {/* Localizações */}
             <div className="space-y-4">
               {/* Rio de Janeiro Location */}
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-[#CE9C5D]" strokeWidth={2} />
-                  <p className="text-[15px]">RIO DE JANEIRO</p>
-                </div>
-                <MoreButton text="ver mais" link="/localizacao/rio-de-janeiro" />
-              </div>
+              <a
+                href="/contato"
+                className="flex items-center gap-2 group transition-all duration-200"
+                style={{
+                  fontFamily: '"DM Sans", "DM Sans Placeholder", sans-serif',
+                  textDecoration: 'none',
+                }}
+              >
+                <MapPin
+                  className="w-5 h-5 text-white transition-colors duration-200 group-hover:text-[#CE9C5D]"
+                  strokeWidth={2}
+                />
+                <span className="text-[15px] text-white uppercase font-semibold transition-colors duration-200 group-hover:text-[#CE9C5D]">
+                  Rio de Janeiro
+                </span>
+              </a>
 
               {/* São Paulo Location */}
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-[#CE9C5D]" strokeWidth={2} />
-                  <p className="text-[15px]">SÃO PAULO</p>
-                </div>
-                <MoreButton text="ver mais" link="/localizacao/sao-paulo" />
-              </div>
+              <a
+                href="/contato"
+                className="flex items-center gap-2 group transition-all duration-200"
+                style={{
+                  fontFamily: '"DM Sans", "DM Sans Placeholder", sans-serif',
+                  textDecoration: 'none',
+                }}
+              >
+                <MapPin
+                  className="w-5 h-5 text-white transition-colors duration-200 group-hover:text-[#CE9C5D]"
+                  strokeWidth={2}
+                />
+                <span className="text-[15px] text-white uppercase font-semibold transition-colors duration-200 group-hover:text-[#CE9C5D]">
+                  São Paulo
+                </span>
+              </a>
             </div>
 
             {/* Email */}

@@ -159,5 +159,25 @@ export const clientsData: IClient[] = [
     nome: 'VLI',
     logoComum: '/clients/c-vli.avif'
   },
+  {
+    nome: 'Vale',
+    logoComum: '/clients/c-vale.png'
+  },
+  {
+    nome: 'Petrobras',
+    logoComum: '/clients/c-petrobras.png'
+  },
+  {
+    nome: 'Shell',
+    logoComum: '/clients/c-shell.png'
+  },
+  {
+    nome: 'BH Airport',
+    logoComum: '/clients/c-bhairport.png'
+  },
+  {
+    nome: 'Coca-cola',
+    logoComum: '/clients/c-cocacola.png'
+  },
 
 ];

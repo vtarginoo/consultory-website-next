@@ -43,7 +43,7 @@ export const ImpactCaseCarousel: React.FC<ImpactCaseCarouselProps> = ({
                             WebkitTextStrokeColor: 'rgba(36, 36, 36, 0.1)',
                         }}
                     >
-                        CASES DE <strong style={{ fontWeight: 800 }}>IMPACTO</strong>
+                        CASOS DE <strong style={{ fontWeight: 800 }}>IMPACTO</strong>
                     </h2>
 
                     {/* Divisor */}

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-import MoreButton from './MoreButton';
+
 
 // Definição da interface (mantida para contexto)
 interface Solution {
@@ -69,7 +69,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
               WebkitTextStrokeColor: 'rgba(36, 36, 36, 0.1)'
             }}
           >
-            DO DIAGNÓSTICO A <strong style={{ fontWeight: 800 }}>CAPTURA DE VALOR</strong>
+            DO DIAGNÓSTICO À <strong style={{ fontWeight: 800 }}>CAPTURA DE VALOR</strong>
           </p>
 
           {/* Divisor (Sem alterações) */}
@@ -165,7 +165,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
                       </p>
 
                       {/* Botão Ver Mais */}
-                      <MoreButton text={'VEJA MAIS'} link={solution.link || '#'}/> 
+                      {/* <MoreButton text={'VEJA MAIS'} link={solution.link || '#'}/>  */}
                     </div>
                   </div>
                 )}
