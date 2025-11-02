@@ -15,10 +15,9 @@ interface OurJourneyProps {
 
 export const OurJourney: React.FC<OurJourneyProps> = ({
     title = "NOSSA **JORNADA** PELA\\n**EXCELÊNCIA OPERACIONAL**",
-    imageSrc = "/sections/runners-quem-somos.png",
-    imageAlt = "Nossa Jornada pela Excelência Operacional",
-    imageSrc2 = "/sections/graphic-quem-somos.png",
-    imageAlt2 = "Gráfico Excelência Operacional",
+    imageSrc = "/sections/timeline.avif",
+    imageAlt = "Gráfico Excelência Operacional",
+    
 
     className = ''
 }) => {
@@ -67,9 +66,9 @@ export const OurJourney: React.FC<OurJourneyProps> = ({
                 </div>
 
                 {/* Timeline Component */}
-                <div className="timeline mt-8 md:mt-12 relative w-full">
+                {/* <div className="timeline mt-8 md:mt-12 relative w-full">
                     <Timeline />
-                </div>
+                </div> */}
 
 
             </div>
