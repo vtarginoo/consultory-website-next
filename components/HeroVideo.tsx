@@ -51,7 +51,7 @@ export default function HeroVideo() {
         loop
         playsInline
       >
-        <source src="https://res.cloudinary.com/dztt17ads/video/upload/v1761096826/video-home_f3mpf3.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dztt17ads/video/upload/v1762894676/Video-home-arco_z7c3ma.mp4" type="video/mp4" />
       </video>
 
       {/* Camada 2: Overlay escuro */}

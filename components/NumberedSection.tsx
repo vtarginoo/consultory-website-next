@@ -40,7 +40,7 @@ export const NumberedSection: React.FC<NumberedSectionProps> = ({
         // Se não, renderiza o texto com largura definida
         return (
             <div className="flex flex-col w-32 md:w-40">
-                <span 
+                <span
                     className="text-sm md:text-base font-semibold text-gray-800 uppercase break-words"
                     style={{
                         fontFamily: '"DM Sans", "DM Sans Placeholder", "sans-serif"',
@@ -100,11 +100,18 @@ export const NumberedSection: React.FC<NumberedSectionProps> = ({
 
     return (
         <section className={`py-12 ${className}`}>
-            <div className="container mx-auto px-4">
-                <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-                    {items.map((item, index) => renderItem(item, index))}
-                </div>
+
+            <div className="flex flex-wrap justify-center gap-4">
+                {items.map((item, index) => (
+                    <div
+                        key={index}
+                        className="flex-1 min-w-[150px] max-w-[250px] flex items-center gap-4"
+                    >
+                        {renderItem(item, index)}
+                    </div>
+                ))}
             </div>
+
         </section>
     );
 };
