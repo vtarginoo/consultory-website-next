@@ -33,12 +33,16 @@ export function TeamCard({
         }`}
       />
 
-      {/* Info Card - Sempre visível */}
-      <div className="absolute bottom-4 left-4 right-4 bg-[#1b1d1f] rounded-[10px] p-4 min-h-[80px]">
+      {/* Info Card - Expande no hover */}
+      <div 
+        className={`absolute bottom-4 left-4 right-4 bg-[#1b1d1f] rounded-[10px] p-4 transition-all duration-300 ${
+          hoveredIndex === index ? 'min-h-0' : 'min-h-[80px]'
+        }`}
+      >
         {/* Nome e Role (padrão) */}
         <div 
           className={`transition-opacity duration-300 ${
-            hoveredIndex === index ? 'opacity-0' : 'opacity-100'
+            hoveredIndex === index ? 'opacity-0 absolute' : 'opacity-100'
           }`}
         >
           <p 
@@ -66,8 +70,8 @@ export function TeamCard({
         {/* Resume (hover) */}
         {member.resume && (
           <div 
-            className={`absolute inset-0 p-4 transition-opacity duration-300 overflow-auto ${
-              hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+            className={`transition-opacity duration-300 ${
+              hoveredIndex === index ? 'opacity-100' : 'opacity-0 absolute'
             }`}
           >
             <p 
@@ -84,5 +88,4 @@ export function TeamCard({
         )}
       </div>
     </div>
-  );
-}
+  );}

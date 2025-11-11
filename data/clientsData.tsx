@@ -61,7 +61,7 @@ export const clientsData: IClient[] = [
   {
     nome: 'Yduqs',
     //logoBranca: '/clients/b-yduqs.avif',
-    logoComum: '/clients/c-yduqs.png',
+    logoComum: '/clients/c-yduqs.jpg',
   },
   {
     nome: 'Concrejato',
