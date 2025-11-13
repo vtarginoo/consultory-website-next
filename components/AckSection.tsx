@@ -2,10 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 
 
+interface ImageConfig {
+  src: string;
+  link?: string; 
+  alt?: string;
+}
+
 interface AckSectionProps {
-  title: string; // Pode incluir **texto** para bold e \n para quebra
-  description: string; // Pode incluir **texto** para bold
-  images?: string[]; // Array de caminhos das imagens
+  title: string;   description: string; 
+  images?: ImageConfig[]; 
   className?: string;
 }
 
@@ -13,10 +18,10 @@ export const AckSection: React.FC<AckSectionProps> = ({
   title,
   description,
   images = [
-    '/acknowledgment/v1-ack1.avif',
-    '/acknowledgment/v1-ack2.avif',
-    '/acknowledgment/v1-ack3.avif',
-    '/acknowledgment/v1-ack4.avif'
+    { src: '/acknowledgment/v1-ack1.avif' },
+    { src: '/acknowledgment/v1-ack2.avif', link: 'https://www.abdib.org.br/' },
+    { src: '/acknowledgment/v1-ack3.avif' },
+    { src: '/acknowledgment/v1-ack4.avif' }
   ],
   className = ''
 }) => {
@@ -41,6 +46,43 @@ export const AckSection: React.FC<AckSectionProps> = ({
         {index < lines.length - 1 && <br />}
       </React.Fragment>
     ));
+  };
+
+  // Renderiza uma imagem (clicável ou não)
+  const renderImage = (imageConfig: ImageConfig, index: number) => {
+    const imageContent = (
+      <div 
+        className={`relative aspect-[232/298] w-full rounded-2xl border border-[#ce9c5d] overflow-hidden bg-white p-4 ${
+          imageConfig.link ? 'cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-[#d4a968] hover:scale-105' : ''
+        }`}
+      >
+        <Image
+          src={imageConfig.src}
+          alt={imageConfig.alt || `Reconhecimento ${index + 1}`}
+          fill
+          className="object-contain p-2"
+          style={{
+            objectPosition: 'center center'
+          }}
+        />
+      </div>
+    );
+
+    // Se tem link, envolve em <a>
+    if (imageConfig.link) {
+      return (
+        <a 
+          key={index}
+          href={imageConfig.link}
+          className="block"
+        >
+          {imageContent}
+        </a>
+      );
+    }
+
+    // Senão, retorna apenas o conteúdo
+    return <div key={index}>{imageContent}</div>;
   };
 
   return (
@@ -84,22 +126,7 @@ export const AckSection: React.FC<AckSectionProps> = ({
 
           {/* Grid de Imagens embaixo */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {images.map((imageSrc, index) => (
-              <div 
-                key={index}
-                className="relative aspect-[232/298] w-full rounded-2xl border border-[#ce9c5d] overflow-hidden bg-white p-4"
-              >
-                <Image
-                  src={imageSrc}
-                  alt={`Reconhecimento ${index + 1}`}
-                  fill
-                  className="object-contain p-2"
-                  style={{
-                    objectPosition: 'center center'
-                  }}
-                />
-              </div>
-            ))}
+            {images.map((imageConfig, index) => renderImage(imageConfig, index))}
           </div>
         </div>
       </div>

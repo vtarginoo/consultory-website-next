@@ -79,7 +79,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="mb-6">
               <h3 className="text-[#CE9C5D] font-bold text-sm tracking-[0.02em] uppercase mb-2">
-                Principais Soluções
+                Principais
               </h3>
               {/* Decorative line SVG */}
               <div className="w-8 h-[2px] bg-[#CE9C5D]"></div>
@@ -97,17 +97,17 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="/cases"
+                href="/casos"
                 className="group inline-block w-fit"
               >
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
-                  Cases
+                  Casos
                 </p>
                 <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
               </Link>
 
               <Link
-                href="/sobre"
+                href="/quem-somos"
                 className="group inline-block w-fit"
               >
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
@@ -116,15 +116,17 @@ export default function Footer() {
                 <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
               </Link>
 
+
               <Link
-                href="/downloads"
+                href="/contato"
                 className="group inline-block w-fit"
               >
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
-                  Downloads
+                  Contato
                 </p>
                 <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
               </Link>
+
             </nav>
           </div>
 
@@ -139,59 +141,68 @@ export default function Footer() {
             </div>
 
             <nav className="flex flex-col gap-4">
-              <Link
+              {/* <Link
                 href="/lgpd"
                 className="group inline-block w-fit"
-              >
+              > */}
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
                   LGPD
                 </p>
                 <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
-              </Link>
+              {/* </Link> */}
 
-              <Link
+              {/* <Link
                 href="/privacidade"
                 className="group inline-block w-fit"
-              >
+              > */}
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
                   Política de Privacidade
                 </p>
                 <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
-              </Link>
+              {/* </Link> */}
 
-              <Link
+              {/* <Link
                 href="/governanca"
                 className="group inline-block w-fit"
-              >
+              > */}
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
                   Governança
                 </p>
                 <div className="h-[1px] bg-[-#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
-              </Link>
+              {/* </Link>
 
               <Link
                 href="/etica"
                 className="group inline-block w-fit"
-              >
+              > */}
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
                   Ética
                 </p>
                 <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
-              </Link>
-
+              {/* </Link>
               <Link
-                href="/contato"
+                href="/downloads"
                 className="group inline-block w-fit"
-              >
+              > */}
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
-                  Contato
+                  Downloads
                 </p>
                 <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
-              </Link>
+              {/* </Link> */}
+
+
+
             </nav>
           </div>
         </div>
-
+        <Link
+              href="https://effectussolucoes.com"
+              target="_blank"
+            >
+          <p className="text-[13px] font-medium tracking-[0.04em] uppercase leading-tight text-center md:text-left">
+            Uma empresa do Grupo Effectus Soluções // www.effectussolucoes.com
+          </p>
+        </Link>        
         {/* Copyright & Social */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[13px] font-medium tracking-[0.04em] uppercase leading-tight text-center md:text-left">
@@ -220,20 +231,25 @@ export default function Footer() {
             >
               <Image src="/contact/whatsapp.png" alt="WhatsApp" width={20} height={20} className="rounded-full" />
             </Link>
-            <Link
+            <div className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden">
+            {/* <Link
               href="https://youtube.com"
               target="_blank"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
-            >
+            > */}
               <Image src="/contact/youtube.png" alt="YouTube" width={20} height={20} className="rounded-full" />
-            </Link>
-            <Link
+            {/* </Link> */}
+            </div>
+
+            {/* <Link
               href="https://facebook.com"
               target="_blank"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
-            >
+            >  */}
+            <div className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden">
               <Image src="/contact/facebook.png" alt="Facebook" width={20} height={20} className="rounded-full" />
-            </Link>
+            </div>
+            {/* </Link> */}
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import { formatText } from './lib/textFormatting';
 
 
@@ -23,30 +22,28 @@ export const QuemSomosTitleSection: React.FC<QuemSomosTitleSectionProps> = ({
   return (
     <section className={`py-12 ${className}`}>
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-6 items-center lg:items-start justify-center">
+        <div className="flex flex-col lg:flex-row gap-8 items-center justify-center">
 
-          {/* Imagem sem moldura - MAIOR */}
-          <div className="lg:w-1/3 w-full flex justify-center">
-            <div className="relative w-full max-w-[450px] aspect-square overflow-hidden">
-              <Image
+          {/* Imagem - MAIOR */}
+          <div className="w-full lg:w-auto flex justify-center lg:justify-start flex-shrink-0">
+            <div className="relative w-full max-w-[380px] lg:max-w-[420px]" style={{ aspectRatio: '1/1' }}>
+              <img
                 src={imageSrc}
                 alt={imageAlt}
-                fill
-                className="object-cover object-center m-0 p-0"
-                sizes="(max-width: 1024px) 100vw, 33vw"
-                priority
+                className="w-full h-full object-contain"
+                loading="eager"
               />
             </div>
           </div>
 
-          {/* Texto mais estreito */}
-          <div className="lg:w-auto max-w-[520px] space-y-5 text-center lg:text-left">
+          {/* Texto centralizado verticalmente */}
+          <div className="lg:w-auto max-w-[580px] space-y-6 text-left flex flex-col justify-center">
             <div>
               <h3
                 className="uppercase tracking-wide"
                 style={{
                   fontFamily: '"Instrument Sans", sans-serif',
-                  fontSize: "clamp(20px, 4vw, 28px)",
+                  fontSize: "clamp(22px, 4vw, 32px)",
                   fontWeight: 500,
                   color: "rgb(36, 36, 36)",
                 }}
@@ -55,14 +52,14 @@ export const QuemSomosTitleSection: React.FC<QuemSomosTitleSectionProps> = ({
               </h3>
 
               {/* divisor laranja */}
-              <div className="mt-2 h-[2px] bg-[#ce9c5d] w-[160px] lg:w-[220px]" />
+              <div className="mt-3 h-[2px] bg-[#ce9c5d] w-[200px]" />
             </div>
 
             <p
               style={{
                 fontFamily: '"Plus Jakarta Sans", sans-serif',
                 fontSize: "16px",
-                lineHeight: "1.7em",
+                lineHeight: "1.75em",
                 color: "rgba(27, 29, 31, 0.8)",
               }}
             >

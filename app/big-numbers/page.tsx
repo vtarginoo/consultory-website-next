@@ -2,6 +2,7 @@ import { clientsData } from "@/data/clientsData";
 import { ourNumbersData } from "@/data/ourNumbersdata";
 import { ClientsCTASection } from "components/ClientsCTASection";
 import ContactFormSection from "components/ContactFormSection";
+import FloatingLogosWidget from "components/FloatingLogoWidget";
 import LogosGrid from "components/LogosGrid";
 import { OurNumbersSection } from "components/OurNumbersSection";
 
@@ -35,20 +36,11 @@ export default function Page() {
             description={"Nosso trabalho já gera resultados reais em empresas líderes de mercado."}>
           </ClientsCTASection>
 
-           <LogosGrid 
+          <FloatingLogosWidget></FloatingLogosWidget>
+           {/* <LogosGrid 
             clients={clientsData} 
             featuredLogos={featuredClients} 
-          />
-          
-         
-
-
-          <ContactFormSection></ContactFormSection>
-
-          
-
-
-
+          /> */}
 
 
 

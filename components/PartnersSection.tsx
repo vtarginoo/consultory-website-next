@@ -12,7 +12,7 @@ const teamMembers: TeamMember[] = [
     name: 'Vinícius Aquino',
     role: 'Co-Founder & Managing Partner',
     image: '/employee/partner-3.png',
-    resume: "20 anos de experiência em consultoria, redução de custos e excelência operacional. Atuou em projetos que geraram mais de R$ 1 bilhão em resultados. Administrador pela PUC-RJ, com passagens por KPMG e BrainNet."
+    resume: "20 anos de experiência em consultoria, redução de custos e excelência operacional. Liderou programas de otimização da cadeia de valor que geraram mais de R$ 1 bilhão em resultados. Administrador pela PUC-RJ e UCAM."
   },
   {
     name: 'Marcos Nicolas',

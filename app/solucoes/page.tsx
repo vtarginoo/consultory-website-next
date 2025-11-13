@@ -1,7 +1,9 @@
 import StatsSection from "components/ui/StatsSection";
 import { formatText } from "components/lib/textFormatting";
 import OurValuesSection from "components/OurValuesSection";
-
+import Image from "next/image";
+import { SolutionsMenu } from "components/SolutionsMenu";
+import { solutionsData } from "@/data/solutionsData";
 
 
 export default function Page() {
@@ -13,22 +15,16 @@ export default function Page() {
           para gerar impacto duradouro.
 `;
 
- const stats = [
-    { value: "+50", description: "projetos entregues" },
-    { value: "+2,5 BI", description: "em redução de custos" },
-    { value: "+1 BI", description: "em geração de caixa no curto prazo" },
-    { value: "+20 BI", description: "em gastos negociados" }
-  ];
+  const textFormatted = formatText(textResult)
+
 
 
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-black">
       <main  >
        
-
-       <StatsSection stats={stats}></StatsSection>
       
-      {/* <SolutionsMenu title="OBTENHA" subtitle="A SOLUÇÃO DE NOSSOS SERVIÇOS" solutions={solutionsData}></SolutionsMenu> */}
+      <SolutionsMenu title="OBTENHA" subtitle="A SOLUÇÃO DE NOSSOS SERVIÇOS" solutions={solutionsData}></SolutionsMenu>
 
 
         {/* <div className="relative w-full mt-32 mb-6" style={{ aspectRatio: '16/9' }}>

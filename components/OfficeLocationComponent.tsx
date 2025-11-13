@@ -18,8 +18,8 @@ interface OfficeLocationSectionProps {
 export default function OfficeLocationSection({ locations }: OfficeLocationSectionProps) {
   const defaultLocations: OfficeLocation[] = [
     {
-      title: "Conecte-se com a Arco",
-      description: "Our headquarters in Tech City is a modern hub for innovation and collaboration, designed to bring cutting-edge ideas to life.",
+      title: "Vamos Conversar",
+      description: "Nossa unidade no Rio de Janeiro oferece um ambiente moderno e colaborativo para impulsionar inovação e entregar soluções de alto impacto.",
       image: "/sections/office-rio.jpeg",
       city: "Rio de Janeiro, RJ",
       address: "Av. Mal. Câmara, 160, 17° andar (salas 1728 e 1729) - Centro",
@@ -28,8 +28,8 @@ export default function OfficeLocationSection({ locations }: OfficeLocationSecti
     },
     {
       title: "Vamos Conversar",
-      description: "Located in the heart of MetroTown, our branch office is equipped to serve clients across the East Coast with efficiency and creativity.",
-      image: "/sections/office-sp.jpeg",
+      description:"Nosso escritório em São Paulo está estrategicamente localizado para atender parceiros e clientes com agilidade, criatividade e foco em resultados.",
+      image: "/sections/office-sp.jpg",
       city: "São Paulo, SP",
       address: "R. Gomes de Carvalho, 1629, 1⁰ andar (sala 101) - Vila Olímpia",
       mapLink: "https://www.google.com/maps/place/R.+Gomes+de+Carvalho,+1629+-+Vila+Ol%C3%ADmpia,+S%C3%A3o+Paulo+-+SP,+04547-006/",

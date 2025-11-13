@@ -1,7 +1,7 @@
 import OurJourney from "components/OurJourney";
 import OurValuesSection from "components/OurValuesSection";
 import PartnersSection from "components/PartnersSection";
-import QuemSomosVideoSection from "components/QuemSomosTitleSection";
+import   QuemSomosTitleSection  from "components/QuemSomosTitleSection";
 
 export default function Page() {
 
@@ -12,7 +12,7 @@ export default function Page() {
     <div className="flex flex-col min-h-screen bg-white dark:bg-black">
       <main className="space-y-12"  >
 
-        <QuemSomosVideoSection imageSrc={"/logo/quem-somos-logo.avif"} />
+        <QuemSomosTitleSection imageSrc={"/logo/quem-somos-logo.avif"} />
 
         <PartnersSection></PartnersSection>
 

@@ -23,14 +23,14 @@ export default function StatsSection({
     { value: "+50", description: "projetos entregues" },
     { value: "+2,5 BI", description: "em redução de custos" },
     { value: "+1 BI", description: "em geração de caixa no curto prazo" },
-    { value: "+10 BI", description: "em gastos negociados" }
+    { value: "+20 BI", description: "em gastos negociados" }
   ],
   accentColor = "rgb(206, 156, 93)",
   textColor = "rgba(27, 29, 31, 0.8)"
 }: StatsSectionProps) {
   return (
     <div className="w-full max-w-7xl mx-auto px-6 py-0">
-      <div className="mb-16">
+      <div className="mb-16 max-w-3xl">
        
         {/* Title */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight"
