@@ -25,7 +25,7 @@ export default function Page() {
     {
       number: 2,
       title: 'Onde Geramos Valor',
-      link: '/insights'
+      link: '/solucoes'
     },
     {
       number: 3,
@@ -108,7 +108,7 @@ const textContent = `
         <DNASection title="NOSSO" subtitle="DNA" align="left" children={nossoDna}></DNASection>
 
 
-        <OurNumbersSection stats={ourNumbersData} imageUrl={"sections/OurNumbers.webp"}
+        <OurNumbersSection stats={ourNumbersData} imageUrl={"sections/OurNumbers.avif"}
           buttonLink="/resultados"></OurNumbersSection>
 
 

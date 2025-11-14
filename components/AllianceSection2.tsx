@@ -65,7 +65,7 @@ export default function AllianceSection() {
                     {/* Imagem - Direita */}
                     <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-xl">
                         <Image
-                            src="/sections/alliance-section.webp"
+                            src="/sections/alliance-section.jpg"
                             alt="Grant Thornton e ARCO Alliance"
                             fill
                             className="object-cover"

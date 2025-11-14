@@ -38,7 +38,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
   const currentImageUrl = displaySolution ? `/solutions/solutions${displaySolution.imageNumber}.png` : null;
   const currentImageAlt = displaySolution ? displaySolution.title : 'Imagem da Solução';
 
-  return (
+    return (
     <section className={`py-16 ${className}`}>
       <div className="container mx-auto px-4">
         {/* Título */}
@@ -84,121 +84,89 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
           </div>
         </div>
 
-        {/* Grid com Cards e Imagem */}
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Lista de Soluções - Mais estreita */}
-          <div className="lg:w-1/3 space-y-4">
-            {solutions.map((solution, index) => (
-              <div
-                key={solution.id}
-                className="rounded-2xl transition-all duration-300"
-                style={{
-                  backgroundColor: openIndex === index ? 'rgba(206, 156, 93, 0.15)' : 'rgba(0, 0, 0, 0.05)',
-                }}
-              >
-                {/* Header do Card */}
-                <button
-                  onClick={() => toggleSolution(index)}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  className="w-full p-6 flex items-center justify-between text-left"
-                >
-                  {/* Título */}
-                  <div className="flex-1 pr-4">
-                    <h5
-                      style={{
-                        fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
-                        fontSize: 'clamp(16px, 2.5vw, 20px)',
-                        fontWeight: 500,
-                        color: 'rgb(36, 36, 36)',
-                        lineHeight: '1.3',
-                        WebkitTextStrokeWidth: '1 px',
-                        WebkitTextStrokeColor: 'rgba(36, 36, 36, 0.1)'
-                      }}
-                    >
-                      {solution.title}
-                    </h5>
-                  </div>
-
-                  {/* Ícone de Seta - Repouso para baixo, clicada para direita */}
-                  <div
-                    className="ml-4 flex items-center justify-center transition-all duration-300"
-                    style={{
-                      width: '40px',
-                      height: '40px',
-                      border: '1px solid rgba(0, 0, 0, 0.8)',
-                      borderRadius: '20px',
-                      backgroundColor: hoveredIndex === index ? 'rgba(206, 156, 93, 0.2)' : 'transparent',
-                      transform: `${hoveredIndex === index ? 'scale(1.1)' : 'scale(1)'} ${openIndex === index ? 'rotate(0deg)' : 'rotate(90deg)'}`,
-                    }}
-                  >
-                    <ArrowRight size={20} color="rgba(0, 0, 0, 0.8)" />
-                  </div>
-                </button>
-              </div>
-            ))}
-          </div>
-
-          {/* Área de Descrição e Imagem - Mais larga */}
-          <div className="lg:w-2/3 space-y-6">
-            {/* Descrição acima da imagem */}
-            {openIndex >= 0 && displaySolution && (
-              <div 
-                className="rounded-2xl p-6 transition-all duration-300"
-                style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.05)',
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
-                    fontSize: 'clamp(14px, 2vw, 16px)',
-                    lineHeight: '1.6em',
-                    color: 'rgb(27, 57, 66)',
-                  }}
-                >
-                  {formatText(displaySolution.description)}
-                </p>
-              </div>
-            )}
-
-            {/* Imagem ou Estado Vazio */}
-            <div 
-              className="relative rounded-3xl overflow-hidden flex items-center justify-center"
-              style={{ 
-                height: openIndex >= 0 ? '450px' : '600px',
-                backgroundColor: '#f0f0f0',
-                transition: 'height 0.3s ease',
+        {/* Lista de Soluções */}
+        <div className="max-w-4xl mx-auto space-y-4">
+          {solutions.map((solution, index) => (
+            <div
+              key={solution.id}
+              className="rounded-2xl transition-all duration-300"
+              style={{
+                backgroundColor: openIndex === index ? 'rgba(0, 0, 0, 0.05)' : 'rgba(0, 0, 0, 0.05)',
               }}
             >
-              {displaySolution && currentImageUrl ? (
-                <Image
-                  src={currentImageUrl}
-                  alt={currentImageAlt}
-                  layout="fill"
-                  objectFit="contain"
-                  className="transition-opacity duration-500" 
-                  priority
-                />
-              ) : (
-                <div className="text-center px-8">
+              {/* Header do Card */}
+              <button
+                onClick={() => toggleSolution(index)}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="w-full p-6 flex items-center justify-between text-left"
+              >
+                {/* Numeração */}
+                <div 
+                  className="mr-4"
+                  style={{
+                    fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
+                    fontSize: 'clamp(18px, 3vw, 24px)',
+                    fontWeight: 500,
+                    color: 'rgba(36, 36, 36, 0.5)',
+                    minWidth: '40px'
+                  }}
+                >
+                  {String(index + 1).padStart(2, '0')}.
+                </div>
+
+                {/* Título */}
+                <div className="flex-1 pr-4">
+                  <h5
+                    style={{
+                      fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
+                      fontSize: 'clamp(16px, 2.5vw, 20px)',
+                      fontWeight: 500,
+                      color: 'rgb(36, 36, 36)',
+                      lineHeight: '1.3',
+                      WebkitTextStrokeWidth: '1 px',
+                      WebkitTextStrokeColor: 'rgba(36, 36, 36, 0.1)'
+                    }}
+                  >
+                    {solution.title}
+                  </h5>
+                </div>
+                {/* Ícone de Seta - Padrão para direita, aberto para baixo */}
+                <div
+                  className="ml-4 flex items-center justify-center transition-all duration-300"
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    border: '1px solid rgba(0, 0, 0, 0.8)',
+                    borderRadius: '20px',
+                    backgroundColor: hoveredIndex === index ? 'rgba(206, 156, 93, 0.2)' : 'transparent',
+                    transform: `${hoveredIndex === index ? 'scale(1.1)' : 'scale(1)'} ${openIndex === index ? 'rotate(90deg)' : 'rotate(0deg)'}`,
+                  }}
+                >
+                  <ArrowRight size={20} color="rgba(0, 0, 0, 0.8)" />
+                </div>
+              </button>
+
+              {/* Descrição - Aparece abaixo quando aberto */}
+              {openIndex === index && (
+                <div 
+                  className="px-6 pb-6 transition-all duration-300"
+                >
                   <p
                     style={{
                       fontFamily: '"Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif',
-                      fontSize: 'clamp(18px, 3vw, 24px)',
-                      fontWeight: 500,
-                      color: 'rgba(36, 36, 36, 0.4)',
-                      lineHeight: '1.5',
+                      fontSize: 'clamp(14px, 2vw, 16px)',
+                      lineHeight: '1.6em',
+                      color: 'rgb(27, 57, 66)',
                     }}
                   >
-                    Clique em uma solução ao lado para conhecer os detalhes
+                    {formatText(solution.description)}
                   </p>
                 </div>
               )}
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
-  );
-}
+  );}
