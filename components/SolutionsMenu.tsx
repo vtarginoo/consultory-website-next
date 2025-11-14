@@ -44,7 +44,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
         {/* Título */}
         <div className="text-center mb-12">
           <h2 
-            className="uppercase mb-1"
+            className="uppercase mb-0"
             style={{
               fontFamily: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif',
               fontSize: 'clamp(28px, 5vw, 36px)',
@@ -52,20 +52,22 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
               letterSpacing: '0em',
               color: 'rgb(36, 36, 36)',
               WebkitTextStrokeWidth: '1 px',
-              WebkitTextStrokeColor: 'rgba(36, 36, 36, 0.1)'
+              WebkitTextStrokeColor: 'rgba(36, 36, 36, 0.1)',
+              lineHeight: '1.1'
             }}
           >
             {title} <strong style={{ fontWeight: 800 }}>{subtitle}</strong>
           </h2>
           <p 
-            className="mb-2"
+            className="mb-2 mt-1"
             style={{
               fontFamily: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif',
               fontSize: 'clamp(24px, 4vw, 36px)',
               fontWeight: 600,
               color: 'rgb(36, 36, 36)',
               WebkitTextStrokeWidth: '1 px',
-              WebkitTextStrokeColor: 'rgba(36, 36, 36, 0.1)'
+              WebkitTextStrokeColor: 'rgba(36, 36, 36, 0.1)',
+              lineHeight: '1.2'
             }}
           >
             DO DIAGNÓSTICO À <strong style={{ fontWeight: 800 }}>CAPTURA DE VALOR</strong>
