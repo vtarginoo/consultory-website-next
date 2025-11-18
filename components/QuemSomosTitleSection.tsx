@@ -16,7 +16,7 @@ export const QuemSomosTitleSection: React.FC<QuemSomosTitleSectionProps> = ({
   imageSrc,
   imageAlt = "Quem Somos",
   title = "QUEM **SOMOS**",
-  description = `"A Arco Consulting Partners é uma consultoria em gestão que atua lado a lado com empresas para superar desafios estratégicos, financeiros e operacionais.\n\nFazemos parte do **Grupo Effectus**, ampliando nossa capacidade de entregar soluções completas que unem performance, inovação e sustentabilidade."`,
+  description = `"A Arco Consulting Partners é uma consultoria em gestão que atua lado a lado com empresas para superar desafios estratégicos, financeiros e operacionais.\n\nFazemos parte do **Grupo Effectus Soluções**, ampliando nossa capacidade de entregar soluções completas que unem performance, inovação e sustentabilidade."`,
   className = "",
 }) => {
   return (

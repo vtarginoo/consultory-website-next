@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import styles from '../styles/ContactWidget.module.css'; 
+import styles from '../styles/ContactWidget.module.css';
 
 interface ContactWidgetProps {
   name?: string;
@@ -25,10 +25,10 @@ export default function ContactWidget({
     const timer = setTimeout(() => {
       setImageLoaded(true);
     }, 2000);
-    
+
     return () => clearTimeout(timer);
   }, []);
-  
+
   const handleClick = () => {
     if (onContactClick) {
       onContactClick();
@@ -45,8 +45,8 @@ export default function ContactWidget({
             {!imageLoaded && (
               <div className={styles.contactAvatarSpinner}></div>
             )}
-            <Image 
-              src={avatarUrl} 
+            <Image
+              src={avatarUrl}
               alt={name}
               className={`${styles.contactAvatarImage} ${imageLoaded ? styles.loaded : ''}`}
               onLoad={() => setImageLoaded(true)}
@@ -68,12 +68,20 @@ export default function ContactWidget({
         </div>
       </div>
 
-      <button 
+      {/* <button 
         className={styles.contactButton}
         onClick={handleClick}
       >
         {buttonText}
-      </button>
+      </button> */}
+
+      <a
+        href="/contato"
+        className={styles.contactButton}
+      >
+        {buttonText}
+      </a>
+
     </div>
   );
 }
