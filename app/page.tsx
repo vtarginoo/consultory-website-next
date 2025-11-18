@@ -11,7 +11,8 @@ import HeroVideoSkeleton from "components/skeletons/HeroVideoSkeleton";
 import FloatingLogosWidget from "components/FloatingLogoWidget";
 import { solutionsData } from "@/data/solutionsData";
 import { ourNumbersData } from "@/data/ourNumbersdata";
-import SolutionsMenu from "components/SolutionsMenu";
+import { SolutionsMenu } from "components/SolutionsMenu";
+
 
 export default function Page() {
 

@@ -68,7 +68,7 @@ const styles = {
   }
 };
 
-const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
+export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
   title = 'CONTRATE NOSSAS',
   subtitle = 'SOLUÇÕES',
   solutions = solutionsData,
@@ -150,6 +150,6 @@ const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
   );
 };
 
-export default SolutionsMenu;
+
 
 
