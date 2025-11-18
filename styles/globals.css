@@ -3,6 +3,23 @@
 @tailwind utilities;
 
 @layer base {
+  /* CORREÇÃO DE ZOOM - Adicione isto no topo */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -30,6 +47,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem
   }
+  
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -56,10 +74,15 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%
   }
+
+  /* Garante que as fontes estejam carregadas */
+  .font-framer-title,
+  .font-framer-subtitle,
+  .font-framer-animation,
+  .font-framer-subtitle2 {
+    font-display: block;
+  }
 }
-
-
-
 
 .font-framer-subtitle {
   font-family: "Instrument Sans", "Instrument Sans Placeholder", sans-serif;
@@ -85,7 +108,7 @@
 
 .font-dm-sans {
   font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
-  font-weight: 600; /* Aumentei de 500 para 600 */
+  font-weight: 600;
   font-style: normal;
   font-size: 13px;
   line-height: 1.1em;
@@ -99,7 +122,7 @@
 
 .font-dm-sans-scrolled {
   font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
-  font-weight: 600; /* Aumentei de 500 para 600 */
+  font-weight: 600;
   font-style: normal;
   font-size: 13px;
   line-height: 1.1em;
@@ -108,20 +131,8 @@
   color: rgb(34, 34, 34);
 }
 
-@layer base {
-  /* Garante que as fontes estejam carregadas */
-  .font-framer-title,
-  .font-framer-subtitle,
-  .font-framer-animation,
-  .font-framer-subtitle2 {
-    font-display: block; /* Evita flash de texto sem estilo */
-  }
-}
-
-
-
 .dark .font-dm-sans-scrolled {
-  color: rgba(255, 255, 255, 0.9); /* Cor quando scrolled no dark mode */
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @keyframes slide {
@@ -130,5 +141,5 @@
 }
 
 .animate-slide {
-  animation: slide 10s steps(5) infinite; /* 5 itens = 5 passos */
+  animation: slide 10s steps(5) infinite;
 }
