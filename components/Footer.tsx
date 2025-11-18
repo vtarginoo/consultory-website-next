@@ -6,8 +6,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Mail } from 'lucide-react';
 import MoreButton from './MoreButton';
+import { useCallback } from 'react';
 
 export default function Footer() {
+
+   const HEADER_OFFSET = 80;
+
+  const scrollToId = useCallback((id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+    window.scrollTo({ top, behavior: "smooth" });
+  }, []);
+
+
+
   return (
     <footer className="bg-[#1B1D1F] text-white py-16 px-6"
       style={{
@@ -87,7 +100,7 @@ export default function Footer() {
 
             <nav className="flex flex-col gap-4">
               <Link
-                href="/solucoes"
+                 href="/#solutions"
                 className="group inline-block w-fit"
               >
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
@@ -97,7 +110,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="/casos"
+                href="/#casos"
                 className="group inline-block w-fit"
               >
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
@@ -211,14 +224,14 @@ export default function Footer() {
 
           <div className="flex gap-4">
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/arcoconsulting"
               target="_blank"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
             >
               <Image src="/contact/linkedin.png" alt="LinkedIn" width={20} height={20} className="rounded-full" />
             </Link>
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/arcocps/"
               target="_blank"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#CE9C5D] transition-all duration-300 flex items-center justify-center overflow-hidden"
             >

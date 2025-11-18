@@ -12,6 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/tab-icon.avif" type="image/svg+xml" />
         {/* Preconnect para fontes */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,15 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@100..900&family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" 
           rel="stylesheet" 
         />
-        
-        {/* Preload do vídeo - CRÍTICO */}
-        <link
-          rel="preload"
-          href="/videos/video-home.mp4"
-          as="video"
-          type="video/mp4"
-        />
-
+      
         {/* Preload da imagem do avatar*/}
         <link
           rel="preload"
