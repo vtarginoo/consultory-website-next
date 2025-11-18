@@ -4,7 +4,7 @@ export const solutionsData = [
     {
       id: 1,
       title: 'Value Chain Optimization',
-      description: '**Para a alta gestão que busca capturar eficiência em toda a cadeia de valor, com impacto direto em resultados financeiros**\n\nO Value Chain Optimization é a metodologia da Arco que reconfigura a cadeia de valor como um sistema financeiro-operacional integrado, conectando Procurement, Operações e Finanças para reduzir custos, liberar caixa e aumentar o EBITDA, com governança e resultados comprovados em empresas líderes de setores.',
+      description: 'Para a alta gestão que busca capturar eficiência em toda a cadeia de valor, com impacto direto em resultados financeiro\n\nO Value Chain Optimization é a metodologia da Arco que reconfigura a cadeia de valor como um sistema financeiro-operacional integrado, conectando Procurement, Operações e Finanças para reduzir custos, liberar caixa e aumentar o EBITDA, com governança e resultados comprovados em empresas líderes de setores.',
       imageNumber: 1,
       link: '/solucoes/value-chain',
     },
@@ -32,14 +32,14 @@ export const solutionsData = [
     {
       id: 5,
       title: 'Capital Projects and Infrastructure (CP&I)',
-      description: '**Transformamos projetos de capital em sistemas integrados de eficiência, previsibilidade e valor.**\n\nO CP&I (Capital Projects & Infrastructure) da Arco é uma estrutura de orquestração da eficiência end-to-end. Integra planejamento, execução e governança contínua em todas as fases do ciclo de vida dos projetos, garantindo previsibilidade de custos, otimização de CAPEX e OPEX e retorno real sobre o investimento.\n\nMais do que gestão de projetos, o CP&I transforma investimentos em valor capturado, com controle, ritmo e proteção do negócio desde o escopo até o encerramento.',
+      description: 'Transformamos projetos de capital em sistemas integrados de eficiência, previsibilidade e valor.\n\nO CP&I (Capital Projects & Infrastructure) da Arco é uma estrutura de orquestração da eficiência end-to-end. Integra planejamento, execução e governança contínua em todas as fases do ciclo de vida dos projetos, garantindo previsibilidade de custos, otimização de CAPEX e OPEX e retorno real sobre o investimento.\n\nMais do que gestão de projetos, o CP&I transforma investimentos em valor capturado, com controle, ritmo e proteção do negócio desde o escopo até o encerramento.',
       imageNumber: 5,
       link: '/solucoes/capital-projects',
     },
     {
       id: 6,
       title: 'Supply Chain + S&OP',
-      description: '**A Arco apoia empresas a integrar e otimizar toda a cadeia de suprimentos, do planejamento ao fulfillment.**\n\nA Arco apoia empresas a integrar e otimizar toda a cadeia de suprimentos, do planejamento ao fulfillment, por meio de modelos avançados de S&OP, gestão de demanda, planejamento logístico e estratégias de contratação. A solução combina previsibilidade, eficiência e nível de serviço elevado, reduzindo custos e fortalecendo a competitividade operacional.',
+      description: 'A Arco apoia empresas a integrar e otimizar toda a cadeia de suprimentos, do planejamento ao fulfillment.\n\nA Arco apoia empresas a integrar e otimizar toda a cadeia de suprimentos, do planejamento ao fulfillment, por meio de modelos avançados de S&OP, gestão de demanda, planejamento logístico e estratégias de contratação. A solução combina previsibilidade, eficiência e nível de serviço elevado, reduzindo custos e fortalecendo a competitividade operacional.',
       imageNumber: 6,
       link: '/solucoes/supply-chain-+-s&op',
     },

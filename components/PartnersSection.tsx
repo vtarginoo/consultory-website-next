@@ -18,7 +18,7 @@ const teamMembers: TeamMember[] = [
     name: 'Marcos Nicolas',
     role: 'Senior Partner Growth & Governance',
     image: '/employee/partner-4.png',
-    resume: "Executivo com 38 anos de atuação nos setores privado e público, liderando projetos em infraestrutura, governo e tecnologia. Matemático e Analista de Sistemas pela UERJ, com MBA pelo COPPEAD/UFRJ."
+    resume: "Executivo com 38 anos de atuação nos setores privado e público, liderando projetos em infraestrutura, governo e tecnologia. Matemático e Analista de Sistemas pela UERJ, com pós em Finanças pela PUC-RJ e MBA pelo COPPEAD/UFRJ."
   },
   {
     name: 'Marcos Saraiva',

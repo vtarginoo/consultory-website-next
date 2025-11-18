@@ -76,7 +76,7 @@ export default function ContactWidget({
       </button> */}
 
       <a
-        href="/contato"
+        href="mailto:arco@arcocp.com"
         className={styles.contactButton}
       >
         {buttonText}

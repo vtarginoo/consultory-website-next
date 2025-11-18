@@ -62,11 +62,13 @@ const styles = {
     fontFamily: '"Plus Jakarta Sans", sans-serif',
     fontSize: 'clamp(14px, 2vw, 16px)',
     lineHeight: '1.6em',
-    color: 'rgb(27, 57, 66)'
+    color: 'rgb(27, 57, 66)',
+    textAlign: 'justify',
+    textIndent: '2em'
   }
 };
 
-export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
+const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
   title = 'CONTRATE NOSSAS',
   subtitle = 'SOLUÇÕES',
   solutions = solutionsData,
@@ -96,7 +98,7 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
           {solutions.map((solution, index) => {
             const isOpen = openIndex === index;
             const isHovered = hoveredIndex === index;
-            
+
             return (
               <div
                 key={solution.id}
@@ -106,34 +108,35 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  className="w-full p-6 flex items-center justify-between text-left"
+                  className="w-full px-6 py-4 flex items-center justify-between text-left"
                 >
                   {/* Número */}
-                  <div className="mr-4" style={styles.number}>
+                  <div className="mr-3" style={styles.number}>
                     {String(index + 1).padStart(2, '0')}.
                   </div>
 
                   {/* Título */}
-                  <div className="flex-1 pr-4">
+                  <div className="flex-1 pr-3">
                     <h5 style={styles.cardTitle}>{solution.title}</h5>
                   </div>
 
                   {/* Ícone */}
                   <div
-                    className="ml-4 flex items-center justify-center w-10 h-10 border border-black/80 rounded-full transition-all duration-300"
+                    className="ml-3 flex items-center justify-center w-9 h-9 border border-black/80 rounded-full transition-all duration-300"
                     style={{
                       backgroundColor: isHovered ? 'rgba(206, 156, 93, 0.2)' : 'transparent',
                       transform: `${isHovered ? 'scale(1.1)' : 'scale(1)'} ${isOpen ? 'rotate(90deg)' : 'rotate(0deg)'}`
                     }}
                   >
-                    <ArrowRight size={20} color="rgba(0, 0, 0, 0.8)" />
+                    <ArrowRight size={18} color="rgba(0, 0, 0, 0.8)" />
                   </div>
                 </button>
 
                 {/* Descrição */}
                 {isOpen && (
                   <div className="px-6 pb-6 transition-all duration-300">
-                    <p style={styles.description}>
+                    <p >
+
                       {formatText(solution.description)}
                     </p>
                   </div>
@@ -145,4 +148,8 @@ export const SolutionsMenu: React.FC<SolutionsMenuProps> = ({
       </div>
     </section>
   );
-}
+};
+
+export default SolutionsMenu;
+
+

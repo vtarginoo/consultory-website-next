@@ -2,7 +2,7 @@
 import { NumberedSection } from "components/NumberedSection";
 import { DNASection } from "components/DNASection";
 import { OurNumbersSection } from "components/OurNumbersSection";
-import { SolutionsMenu } from "components/SolutionsMenu";
+
 import { ImpactCaseCarousel } from "components/ImpactCaseCarousel";
 import { AllianceSection } from "components/AllianceSection";
 import { AckSection } from "components/AckSection";
@@ -11,6 +11,7 @@ import HeroVideoSkeleton from "components/skeletons/HeroVideoSkeleton";
 import FloatingLogosWidget from "components/FloatingLogoWidget";
 import { solutionsData } from "@/data/solutionsData";
 import { ourNumbersData } from "@/data/ourNumbersdata";
+import SolutionsMenu from "components/SolutionsMenu";
 
 export default function Page() {
 

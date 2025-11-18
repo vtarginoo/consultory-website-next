@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>import React from &apos;react&apos;; import Image from &apos;next/image&apos;; export default function AllianceSection() { return ( &lt;section className=&quot;w-full py-16 md:py-24 px-6&quot;&gt; &lt;div className=&quot;max-w-7xl mx-auto&quot;&gt; &lt;div className=&quot;grid grid-cols-1 lg:grid-cols-2 gap-8 - 1</caption>
+  <note/>
+  <place/>
+  <categories/>
+</comment>
