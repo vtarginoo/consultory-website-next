@@ -181,7 +181,7 @@ export default function Footer() {
                 <p className="text-sm font-medium tracking-[0.02em] uppercase text-white group-hover:text-[#CE9C5D] transition-colors mb-1">
                   Governança
                 </p>
-                <div className="h-[1px] bg-[-#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
+                <div className="h-[1px] bg-[#1B1D1F] group-hover:bg-[#CE9C5D] transition-colors"></div>
               {/* </Link>
 
               <Link
@@ -217,7 +217,7 @@ export default function Footer() {
           </p>
         </Link>        
         {/* Copyright & Social */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-gray-800 pt-2 pb-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[13px] font-medium tracking-[0.04em] uppercase leading-tight text-center md:text-left">
             Copyright © 2025 // ARCO - Consulting Partners // All rights reserved.
           </p>
